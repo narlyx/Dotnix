@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   # Other modules
@@ -9,6 +9,13 @@
     ../modules/home-manager/wezterm.nix
   ];
 
+  # Brew-nix
+  nixpkgs = {
+    overlays = [
+      inputs.brew-nix.overlays.default
+    ];
+  };
+
   # Home configuration
   home = {
     # User
@@ -17,12 +24,14 @@
 
     # User packages
     packages = with pkgs; [
-      arc-browser
+      brewCasks.zen-browser
       obsidian
       vesktop
       spotify
       raycast
       android-tools
+      brewCasks.android-studio
+      brewCasks.visual-studio-code
     ];
 
     # Version

@@ -18,10 +18,20 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Brew-nix
+    brew-nix = {
+      url = "github:BatteredBunny/brew-nix";
+      inputs.brew-api.follows = "brew-api";
+    };
+    brew-api = {
+      url = "github:BatteredBunny/brew-api";
+      flake = false;
+    };
   };
 
   # Outputs
-  outputs = { self, nixpkgs, home-manager, nix-darwin, ... } @ inputs: let
+  outputs = { self, nixpkgs, home-manager, nix-darwin, brew-nix, ... } @ inputs: let
     inherit (self) outputs;
   in {
     # NixOS configurations
@@ -47,6 +57,13 @@
         specialArgs = { inherit inputs outputs nix-darwin; };
         modules = [
           ./hosts/arsenic
+          brew-nix.darwinModules.default
+          (
+            { ... }:
+            {
+              brew-nix.enable = true;
+            }
+          )
           home-manager.darwinModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
