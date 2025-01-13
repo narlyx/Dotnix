@@ -69,6 +69,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.sharedModules = [ mac-app-util.homeManagerModules.default ];
+            home-manager.backupFileExtension = "backup";
             home-manager.users.narlyx = import ./home/darwin.nix;
           }
         ];

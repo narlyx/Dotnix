@@ -6,14 +6,14 @@
     ./starship.nix
   ];
 
-  # Packages
+  # Dependancies
   home.packages = with pkgs; [
-    # Dependancies
     zoxide
     eza
     bat
     fzf
     thefuck
+    libnotify
   ];
 
   # Enabling zsh

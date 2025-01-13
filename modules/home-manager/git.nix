@@ -13,7 +13,7 @@
     userEmail = "109835029+narlyx@users.noreply.github.com";
     extraConfig = {
       credential.helper = "gh auth git-credential";
-      core.pager = "bat";
+      #core.pager = "bat";
     };
   };
 }
