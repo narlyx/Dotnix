@@ -25,14 +25,21 @@
 
     # User packages
     packages = with pkgs; [
+      # Common
       brewCasks.zen-browser
       obsidian
       vesktop
       spotify
+      
+      # Utilities
       raycast
+
+      # Development
       android-tools
       brewCasks.android-studio
       brewCasks.visual-studio-code
+      brewCasks.gimp
+      brewCasks.krita
     ];
 
     # Version
