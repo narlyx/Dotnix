@@ -1,8 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Enabling starship
-  programs.starship.enable = true;
+  # Installing starship
+  home.packages = with pkgs; [
+    starship
+  ];
   
   # Linking config
   home.file.".config/starship.toml" = {

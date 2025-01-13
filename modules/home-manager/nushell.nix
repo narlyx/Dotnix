@@ -1,15 +1,17 @@
 { config, lib, pkgs, ... }:
 
 {
+  # Other modules
   imports = [
     ./starship.nix
   ];
 
+  # Dependancies
   home.packages = with pkgs; [
     zoxide
   ];
 
-  programs.starship.enable = true;
+  # Enabling nushell
   programs.nushell = {
     enable = true;
     configFile.source = ../../dotfiles/nushell/config.nu;

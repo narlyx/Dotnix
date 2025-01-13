@@ -17,14 +17,11 @@
     keyMap = "us";
   };
 
-  # Zsh
-  programs.zsh.enable = true;
-
   # Users
   users.users.narlyx = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
   };
   
   # Packages
