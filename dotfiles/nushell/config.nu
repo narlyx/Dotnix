@@ -1,6 +1,6 @@
 # Laoding other modules
 source ~/.zoxide.nu
-source ~/.starship.nu
+source ~/.oh-my-posh.nu
 
 # Main configuration
 $env.config = {

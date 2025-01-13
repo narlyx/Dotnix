@@ -19,7 +19,8 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 
 # Shell integrations
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.json)"
 eval "$(zoxide init zsh)"
 eval "$(thefuck --alias)"
 if [[ -f "/opt/homebrew/bin/brew" ]] then # Homebrew

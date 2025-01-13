@@ -3,7 +3,7 @@
 {
   # Other modules
   imports = [
-    ./starship.nix
+    ./oh-my-posh.nix
   ];
 
   # Dependancies

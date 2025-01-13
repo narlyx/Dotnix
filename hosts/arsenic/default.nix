@@ -39,6 +39,11 @@
     stateVersion = 5;
   };
 
+  # Fonts
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+  ];
+
   # Services
   services = {
     tailscale = {
