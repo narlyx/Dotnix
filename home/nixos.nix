@@ -3,7 +3,7 @@
 {
   # Other files
   imports = [
-    ../modules/home-manager/zsh.nix
+    ../modules/home-manager/nushell.nix
     ../modules/home-manager/git.nix
     ../modules/home-manager/neovim.nix
     ../modules/home-manager/tmux.nix
