@@ -3,7 +3,7 @@
 {
   # Other modules
   imports = [
-    hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   # Experimental features
