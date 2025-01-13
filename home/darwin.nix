@@ -7,6 +7,7 @@
     ../modules/home-manager/zsh.nix
     ../modules/home-manager/neovim.nix
     ../modules/home-manager/wezterm.nix
+    ../modules/home-manager/tmux.nix
   ];
 
   # Brew-nix

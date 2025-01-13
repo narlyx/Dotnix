@@ -6,6 +6,7 @@
     ../modules/home-manager/zsh.nix
     ../modules/home-manager/git.nix
     ../modules/home-manager/neovim.nix
+    ../modules/home-manager/tmux.nix
   ];
 
   # Home configuration

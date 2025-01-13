@@ -4,7 +4,6 @@
   # Other used modules
   imports = [
     ./starship.nix
-    ./tmux.nix
   ];
 
   # Packages

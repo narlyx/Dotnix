@@ -26,13 +26,6 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then # Homebrew
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Tmux autolaunch
-if [[ -n $DISPLAY && -n $XDG_CURRENT_DESKTOP ]] || [[ "$(uname)" == "Darwin" ]]; then
-  if [[ -z "$TMUX" && "$TERM" == "xterm-ghostty" ]]; then
-    tmux attach-session -t $(tmux ls | awk '{print $1}' | tail -n 1) 2>/dev/null || tmux new-session
-  fi
-fi
-
 # Shell variables
 export MANPAGER="sh -c 'col -bx | bat -l man'"
 export MANROFFOPT="-c"
