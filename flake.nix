@@ -19,6 +19,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Mac app util
+    mac-app-util.url = "github:hraban/mac-app-util";
+
     # Brew-nix
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
@@ -31,7 +34,7 @@
   };
 
   # Outputs
-  outputs = { self, nixpkgs, home-manager, nix-darwin, brew-nix, ... } @ inputs: let
+  outputs = { self, nixpkgs, home-manager, nix-darwin, brew-nix, mac-app-util, ... } @ inputs: let
     inherit (self) outputs;
   in {
     # NixOS configurations
@@ -58,15 +61,14 @@
         modules = [
           ./hosts/arsenic
           brew-nix.darwinModules.default
-          (
-            { ... }:
-            {
-              brew-nix.enable = true;
-            }
-          )
+          ( { ... }: {
+            brew-nix.enable = true;
+          })
+          mac-app-util.darwinModules.default
           home-manager.darwinModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ mac-app-util.homeManagerModules.default ];
             home-manager.users.narlyx = import ./home/darwin.nix;
           }
         ];
