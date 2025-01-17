@@ -4,6 +4,7 @@
   # Other modules
   imports = [
     ../../modules/nixos/i3.nix
+    ../../modules/nixos/pipewire.nix
   ];
 
   # Experimental features
@@ -26,7 +27,7 @@
   # Users
   users.users.narlyx = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" ];
+    extraGroups = [ "wheel" "video" "audio" ];
     shell = pkgs.nushell;
   };
   
