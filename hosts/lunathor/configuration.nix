@@ -1,6 +1,11 @@
 { inputs, outputs, config, lib, pkgs, ... }:
 
 {
+  # Other modules
+  imports = [
+    ../../modules/nixos/i3.nix
+  ];
+
   # Experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -32,24 +37,6 @@
     curl
     git
   ];
-
-  # Desktop
-  services.xserver = {
-    enable = true;
-
-    desktopManager = {
-      xterm.enable = false;
-    };
-
-    displayManager = {
-      defaultSession = "none+i3";
-      startx.enable = true;
-    };
-
-    windowManager.i3 = {
-      enable = true;
-    };
-  };
 
   # Services
   services.openssh.enable = true;
