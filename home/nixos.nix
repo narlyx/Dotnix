@@ -14,6 +14,7 @@
     ../modules/home-manager/i3.nix
 
     # Applications
+    ../modules/home-manager/librewolf.nix
     ../modules/home-manager/ghostty.nix
   ];
 
@@ -25,7 +26,6 @@
 
     # User packages
     packages = with pkgs; [
-      librewolf
       obsidian
       spotify
       vesktop
