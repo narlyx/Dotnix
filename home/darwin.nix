@@ -3,12 +3,18 @@
 {
   # Other modules
   imports = [
+    # Command line
     ../modules/home-manager/git.nix
     ../modules/home-manager/zsh.nix
     ../modules/home-manager/nushell.nix
     ../modules/home-manager/neovim.nix
-    ../modules/home-manager/wezterm.nix
     ../modules/home-manager/tmux.nix
+
+    # Applications
+    ../modules/home-manager/wezterm.nix
+    
+    # Services
+    ../modules/home-manager/syncthing.nix
   ];
 
   # Brew-nix
@@ -46,14 +52,7 @@
     # Version
     stateVersion = "24.11";
   };
-
-  # User services
-  services = {
-    syncthing = {
-      enable = true;
-    };
-  };
-
+  
   # Enabling self
   programs.home-manager.enable = true;
 }

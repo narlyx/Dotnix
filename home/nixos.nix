@@ -16,6 +16,9 @@
     # Applications
     ../modules/home-manager/librewolf.nix
     ../modules/home-manager/ghostty.nix
+
+    # Services
+    ../modules/home-manager/syncthing.nix
   ];
 
   # Home configuration
