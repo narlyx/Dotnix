@@ -37,6 +37,7 @@
 
       # Development
       android-tools
+      nodejs
       brewCasks.android-studio
       brewCasks.visual-studio-code
       brewCasks.gimp
