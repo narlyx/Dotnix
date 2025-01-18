@@ -4,10 +4,19 @@
   # Other modules
   imports = [
     ./hardware-configuration.nix
+    ../../modules/nixos/i3.nix
+    ../../modules/nixos/pipewire.nix
+    ../../modules/shared/tailscale.nix
   ];
 
   # Experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Allow unfree
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = true;
+  };
   
   # Locale
   time.timeZone = "America/Boise";
@@ -20,7 +29,7 @@
   # Users
   users.users.narlyx = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" "audio" ];
     shell = pkgs.nushell;
   };
   

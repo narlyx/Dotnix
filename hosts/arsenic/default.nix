@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  # Other modules
+  imports = [
+    ../../modules/shared/tailscale.nix
+  ];
+
   # User
   users.users.narlyx.home = "/Users/narlyx";
 
@@ -43,11 +48,4 @@
   fonts.packages = [
     pkgs.nerd-fonts.jetbrains-mono
   ];
-
-  # Services
-  services = {
-    tailscale = {
-      enable = true;
-    };
-  };
 }
