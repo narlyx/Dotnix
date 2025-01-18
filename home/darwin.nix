@@ -44,6 +44,8 @@
       # Development
       android-tools
       nodejs
+      jdk11
+      gradle
       brewCasks.android-studio
       brewCasks.visual-studio-code
       brewCasks.gimp
