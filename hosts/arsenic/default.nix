@@ -26,7 +26,13 @@
   security.pam.enableSudoTouchIdAuth = true;
   system = {
     defaults = {
-      trackpad.TrackpadThreeFingerDrag = true;
+      trackpad = {
+        Clicking = false;
+        Dragging = false;
+        FirstClickThreshold = 0;
+        SecondClickThreshold = 2;
+        TrackpadThreeFingerDrag = true;
+      };
       dock = {
         autohide = true;
         show-recents = false;
@@ -34,6 +40,7 @@
         largesize = 64;
         tilesize = 48;
       };
+      screencapture.target = "clipboard";
       NSGlobalDomain = {
         ApplePressAndHoldEnabled = false;
         AppleInterfaceStyle = "Dark";
