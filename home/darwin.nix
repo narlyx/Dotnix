@@ -11,7 +11,7 @@
     ../modules/home-manager/tmux.nix
 
     # Applications
-    ../modules/home-manager/wezterm.nix
+    ../modules/home-manager/ghostty-darwin.nix
     
     # Services
     ../modules/home-manager/syncthing.nix
@@ -42,14 +42,15 @@
       raycast
 
       # Development
-      android-tools
       nodejs
       jdk11
       gradle
+      android-tools
       brewCasks.android-studio
       brewCasks.visual-studio-code
       brewCasks.gimp
       brewCasks.krita
+      neovide
     ];
 
     # Version
