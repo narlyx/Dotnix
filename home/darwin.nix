@@ -37,7 +37,7 @@
       obsidian
       vesktop
       spotify
-      
+
       # Utilities
       raycast
 

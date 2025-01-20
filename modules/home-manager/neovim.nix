@@ -6,6 +6,7 @@
     yarn
     go
     clang
+    ripgrep
   ];
 
   # Enabling neovim
