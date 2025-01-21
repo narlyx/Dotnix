@@ -1,17 +1,15 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  # Other modules
-  imports = [
-    ./oh-my-posh.nix
-  ];
+  # Other files
+  imports = [ ./oh-my-posh.nix ];
 
   # Dependancies
   home.packages = with pkgs; [
     zoxide
   ];
 
-  # Enabling nushell
+  # Configuring nushell
   programs.nushell = {
     enable = true;
     configFile.source = ../../dotfiles/nushell/config.nu;

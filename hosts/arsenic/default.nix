@@ -1,29 +1,59 @@
-{ config, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, ... }:
 
 {
-  # Other modules
+  # Imports
   imports = [
-    ../../modules/shared/tailscale.nix
+    # outputs.darwinModules.example
   ];
 
   # User
-  users.users.narlyx.home = "/Users/narlyx";
+  users.users.narlyx = {
+    home = "/Users/narlyx";
+    shell = pkgs.zsh;
+  };
 
-  # System packages
-  environment.systemPackages = with pkgs; [
-    git
-    wget
-    curl
-  ];
+  # Timezone
+  time.timeZone = "America/Boise";
 
-  # Allow proprietary software
+  # Networking
+  networking = {
+    computerName = "arsenic";
+    hostName = "arsenic";
+  };
+
+  # Environment settings
+  environment = {
+    # Packages
+    systemPackages = with pkgs; [
+      # System tools
+      wget
+      git
+      vim
+      neovim
+      zsh
+    ];
+  };
+
+  # Nix settings
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Experimental features
-  nix.settings.experimental-features = "nix-command flakes";
+  # Fonts
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+  ];
 
-  # Macos settings
+  # Services
+  services = {
+    tailscale.enable = true;
+  };
+
+  # Security settings
   security.pam.enableSudoTouchIdAuth = true;
+
+  # System settings
   system = {
     defaults = {
       trackpad = {
@@ -44,15 +74,15 @@
       NSGlobalDomain = {
         ApplePressAndHoldEnabled = false;
         AppleInterfaceStyle = "Dark";
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
       };
     };
+
+    # Declaring defualt shell for narlyx
+    activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh narlyx'';
 
     # Version
     stateVersion = 5;
   };
-
-  # Fonts
-  fonts.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
-  ];
 }

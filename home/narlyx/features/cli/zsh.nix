@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  # Other used modules
+  # Other files
   imports = [
     ./oh-my-posh.nix
   ];
