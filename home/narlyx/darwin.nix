@@ -3,6 +3,7 @@
 {
   imports = [
     ./features/cli
+    ./features/cli/nushell.nix
     ./features/desktop/darwin
   ];
 
@@ -21,6 +22,7 @@
       jdk11
       #gradle
       android-tools
+      brewCasks.visual-studio-code
       brewCasks.android-studio
     ];
 

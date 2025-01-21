@@ -17,3 +17,6 @@ vim.g.loaded_python3_provider = 0
 
 -- Concealment
 vim.opt.conceallevel = 1
+
+-- Line wrapping
+vim.opt.wrap = false
