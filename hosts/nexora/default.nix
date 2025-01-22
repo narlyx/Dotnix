@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common/features/i3.nix
+    ../common/fonts/nerdfonts.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -33,10 +34,6 @@
     wget
     curl
     git
-  ];
-
-  fonts.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
   ];
 
   services = {

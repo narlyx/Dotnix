@@ -3,7 +3,7 @@
 {
   # Imports
   imports = [
-    # outputs.darwinModules.example
+    ../common/fonts/nerdfonts.nix
   ];
 
   # User
@@ -39,11 +39,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Fonts
-  fonts.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
-  ];
 
   # Services
   services = {
