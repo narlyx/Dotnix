@@ -4,7 +4,7 @@
   imports = [
     ./features/cli
     ./features/desktop/common
-    ./features/desktop/i3
+    ./features/desktop/hyprland
   ];
 
   home = {

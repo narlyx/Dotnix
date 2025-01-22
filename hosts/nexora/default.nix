@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../common/features/i3.nix
     ../common/fonts/nerdfonts.nix
   ];
 
@@ -28,6 +27,7 @@
   };
 
   programs.zsh.enable = true;
+  programs.hyprland.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
