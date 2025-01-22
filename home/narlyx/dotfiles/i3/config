@@ -27,6 +27,8 @@ font pango:monospace 8
 ### AUTOSTART ###
 #################
 exec --no-startup-id dex --autostart --environment i3
+exec_always --no-startup-id ~/.config/i3/launchbar.sh
+exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.jpg
 
 #############
 ### BINDS ###
@@ -129,8 +131,3 @@ bindsym $mod+r mode "resize"
 # Gaps
 gaps inner 5px
 gaps outer 20px
-
-# Bar
-bar {
-        status_command i3status
-}

@@ -35,6 +35,10 @@
     git
   ];
 
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+  ];
+
   services = {
     openssh.enable = true;
     tailscale.enable = true;

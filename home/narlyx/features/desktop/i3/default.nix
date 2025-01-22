@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
     rofi
+    feh
+    polybar
   ];
   xsession.windowManager.i3 = {
     enable = true;
