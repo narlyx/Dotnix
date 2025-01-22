@@ -54,7 +54,18 @@
 
     # NixOS configurations
     nixosConfigurations = {
-
+      "nexora" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          ./hosts/nexora
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.narlyx = import ./home/narlyx/nixos.nix;
+          }
+        ];
+      };
     };
     # End of NixOS configurations
 
