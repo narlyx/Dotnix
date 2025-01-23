@@ -11,6 +11,7 @@
     spotify
     vesktop
     neovide
+    qbittorrent
   ];
 
   services = {

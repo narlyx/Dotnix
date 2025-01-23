@@ -18,12 +18,19 @@
     homeDirectory = "/Users/narlyx";
 
     packages = with pkgs; [
+      # Desktop
+      brewCasks.qflipper
+      utm
+
+      # IDE
+      brewCasks.visual-studio-code
+      brewCasks.android-studio
+
+      # Devel
       nodejs
       jdk11
       #gradle
       android-tools
-      brewCasks.visual-studio-code
-      brewCasks.android-studio
     ];
 
     stateVersion = "24.11";
