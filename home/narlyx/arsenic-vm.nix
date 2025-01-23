@@ -3,8 +3,6 @@
 {
   imports = [
     ./features/cli
-    ./features/desktop/common
-    ./features/desktop/hyprland
   ];
 
   home = {

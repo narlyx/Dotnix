@@ -66,6 +66,18 @@
           }
         ];
       };
+      "arsenic-vm" = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          ./hosts/arsenic-vm
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.narlyx = import ./home/narlyx/arsenic-vm.nix;
+          }
+        ];
+      };
     };
     # End of NixOS configurations
 
