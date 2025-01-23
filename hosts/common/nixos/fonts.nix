@@ -5,3 +5,4 @@
     pkgs.nerd-fonts.jetbrains-mono
   ];
 }
+
