@@ -3,7 +3,7 @@
 {
   # Imports
   imports = [
-    ../common/fonts/nerdfonts.nix
+    ../common/nixos/fonts.nix
   ];
 
   # User
