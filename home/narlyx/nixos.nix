@@ -11,6 +11,10 @@
     username = "narlyx";
     homeDirectory = "/home/narlyx";
 
+    packages = with pkgs; [
+      ventoy-full
+    ];
+
     stateVersion = "24.11";
   };
 

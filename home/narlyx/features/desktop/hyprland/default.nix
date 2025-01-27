@@ -1,8 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./waybar.nix
+  ];
+
   home.packages = with pkgs; [
-    waybar
     walker
   ];
 

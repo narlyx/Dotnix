@@ -1,0 +1,88 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 33,
+  "spacing": 15,
+
+  "modules-left": [
+    "custom/border",
+    "custom/icon",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+  
+  ],
+  "modules-right": [
+    "tray",
+    "wireplumber",
+    "battery",
+    "network",
+    "clock",
+    "custom/border"
+  ],
+
+  "custom/border": {
+    "format": " ",
+    "tooltip": false
+  },
+
+  "custom/icon": {
+   "format": "",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰾔",
+      "2": "",
+      "3": "󱃖",
+      "4": "󰂺",
+      "5": "󰭹",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{title}"
+  },
+  
+  "wireplumber": {
+    "format": "{icon} ",
+    "format-muted": "",
+    "format-icons": [
+      "", "", ""
+    ],
+  },
+
+  "battery": {
+    "format-charging": "󰂄 ",
+    "format": "{icon} ",
+    "interval": 1,
+    "states": {
+      "warning": 30,
+      "critical": 10
+    },
+    "format-icons": [
+      "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+    ]
+  },
+
+  "network": {
+    "format-ethernet": " ",
+    "format-wifi": "{icon} ",
+    "format-disconnected": " ",
+    "format-icons": [
+      "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+    ],
+    "tooltip-format": "{ipaddr}"
+  },
+
+  "clock": {
+    "format": "{:%a %b %d %I:%M %p}",
+    "tooltip": false
+  }
+}

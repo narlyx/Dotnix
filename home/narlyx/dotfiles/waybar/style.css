@@ -1,0 +1,62 @@
+@define-color red #e78284;
+@define-color yellow #e5c890;
+@define-color blue #8caaee;
+@define-color text #c6d0f5;
+@define-color overlay1 #838ba7;
+@define-color surface1 #51576d;
+@define-color surface0 #414559;
+@define-color base #303446;
+
+window#waybar {
+  background: transparent;
+  color: @text;
+  font-weight: bold;
+}
+
+#custom-icon {
+  padding: 0;
+  padding-right: 5px;
+  font-size: 24px;
+}
+
+/*
+#workspaces {
+  background: @base;
+  padding: 0 10px;
+  border-radius: 0 0 10px 10px;
+}*/
+#workspaces button {
+  border: none;
+  font-size: 18px;
+  padding: 0 0.25em;
+  border-radius: 0;
+  color: @text;
+  border-top: 2px solid transparent;
+  transition: border 0.3s ease, color 0.3s ease;
+}
+#workspaces button.empty {
+  color: @surface1;
+}
+#workspaces button.active {
+  border-top: 2px solid @yellow;
+  color: @yellow;
+}
+#workspaces button.urgent {
+  border-top: 2px solid @red;
+  color: @red;
+}
+#workspaces button:hover {
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  border-top: 2px solid @blue;
+  color: @blue;
+  }
+
+#window {
+  color: @overlay1;
+}
+
+#battery.warning { color: @yellow; }
+#battery.critical { color: @red; }
