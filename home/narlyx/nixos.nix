@@ -13,6 +13,7 @@
 
     packages = with pkgs; [
       ventoy-full
+      koodo-reader
     ];
 
     stateVersion = "24.11";

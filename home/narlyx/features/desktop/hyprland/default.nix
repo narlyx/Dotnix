@@ -7,6 +7,8 @@
 
   home.packages = with pkgs; [
     walker
+    playerctl
+    brightnessctl
   ];
 
   home.file.".config/hypr" = {
