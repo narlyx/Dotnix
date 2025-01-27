@@ -22,6 +22,10 @@
       brewCasks.qflipper
       utm
 
+      # Literature
+      brewCasks.koodo-reader
+      brewCasks.calibre
+ 
       # IDE
       brewCasks.visual-studio-code
       brewCasks.android-studio
