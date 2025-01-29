@@ -14,6 +14,10 @@
     packages = with pkgs; [
       ventoy-full
       koodo-reader
+      onlyoffice-desktopeditors
+      python312
+      android-tools
+      android-studio
     ];
 
     stateVersion = "24.11";
