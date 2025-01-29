@@ -9,6 +9,10 @@
     walker
     playerctl
     brightnessctl
+    jq
+    grim
+    slurp
+    swappy
   ];
 
   home.file.".config/hypr" = {
