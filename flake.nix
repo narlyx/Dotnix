@@ -66,15 +66,15 @@
           }
         ];
       };
-      "arsenic-vm" = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
+      "acetylene" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = { inherit inputs outputs; };
         modules = [
-          ./hosts/arsenic-vm
+          ./hosts/acetylene
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.narlyx = import ./home/narlyx/arsenic-vm.nix;
+            home-manager.users.narlyx = import ./home/narlyx/nixos.nix;
           }
         ];
       };

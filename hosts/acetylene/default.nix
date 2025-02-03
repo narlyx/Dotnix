@@ -1,17 +1,22 @@
 { inputs, outputs, config, lib, pkgs, ... }:
 
 {
-  imports =[
+  imports = [
     ./hardware-configuration.nix
     ../common/nixos
     ../common/nixos/grub.nix
+    ../common/features/hyprland.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "arsenic-vm";
-  networking.networkmanager.enable = true;
+  services = {
+    openssh.enable = true;
+    tailscale.enable = true;
+  };
 
+  networking.hostName = "acetylene";
+  networking.networkmanager.enable = true;
+  
   system.stateVersion = "24.11";
 }
-
