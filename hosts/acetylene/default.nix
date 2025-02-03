@@ -17,6 +17,45 @@
 
   networking.hostName = "acetylene";
   networking.networkmanager.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    pciutils
+  ];
+
+  programs.virt-manager.enable = true;
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        ovmf = {
+          enable = true;
+          packages = [ pkgs.OVMFFull.fd ];
+        };
+        swtpm.enable = true;
+      };
+    };
+    spiceUSBRedirection.enable = true;
+  };
+
+  boot = {
+    kernelParams = [ "kvm-amd" "amd_iommu=on" ];
+    #blacklistedKernelModules = [ "amdgpu" ];
+    kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
+    postBootCommands = ''
+      HOSTDEVS="0000:0b:00.0 0000:0b:00.1"
+      VFIODEVS="0000:0e:00.0 0000:0e:00.1"
+
+      for DEV in $HOSTDEVS; do
+        echo "amdgpu" > /sys/bus/pci/devices/$DEV/driver_override
+      done
+
+      for DEV in $VFIODEVS; do
+        echo "vfio-pci" > /sys/bus/pci/devices/$DEV/driver_override
+      done
+      modprobe -i vfio-pci
+    '';
+  };
   
   system.stateVersion = "24.11";
 }

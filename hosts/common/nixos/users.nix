@@ -5,7 +5,7 @@
 
   users.users.narlyx = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" ];
+    extraGroups = [ "wheel" "video" "audio" "libvirtd" ];
     shell = pkgs.zsh;
   };
 }
