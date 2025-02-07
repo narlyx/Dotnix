@@ -6,6 +6,7 @@
     ../common/nixos
     ../common/nixos/grub.nix
     ../common/features/hyprland.nix
+    ../common/features/virtualisation.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

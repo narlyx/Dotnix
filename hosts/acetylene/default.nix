@@ -6,6 +6,7 @@
     ../common/nixos
     ../common/nixos/grub.nix
     ../common/features/hyprland.nix
+    ../common/features/virtualisation.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -21,22 +22,6 @@
   environment.systemPackages = with pkgs; [
     pciutils
   ];
-
-  programs.virt-manager.enable = true;
-  virtualisation = {
-    libvirtd = {
-      enable = true;
-      qemu = {
-        package = pkgs.qemu_kvm;
-        ovmf = {
-          enable = true;
-          packages = [ pkgs.OVMFFull.fd ];
-        };
-        swtpm.enable = true;
-      };
-    };
-    spiceUSBRedirection.enable = true;
-  };
 
   boot = {
     kernelParams = [ "kvm-amd" "amd_iommu=on" ];
