@@ -14,6 +14,7 @@
     grim
     slurp
     swappy
+    ags
   ];
 
   home.file.".config/hypr" = {

@@ -12,12 +12,20 @@
     homeDirectory = "/home/narlyx";
 
     packages = with pkgs; [
+      # Tools
       ventoy-full
+
+      # Office
       koodo-reader
       onlyoffice-desktopeditors
+
+      # Devel
       python312
       android-tools
       android-studio
+
+      # Graphics
+      gimp
     ];
 
     stateVersion = "24.11";

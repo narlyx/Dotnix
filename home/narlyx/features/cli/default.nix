@@ -11,6 +11,7 @@
 
   # Other tools
   home.packages = with pkgs; [
-    # Packages here
+    # Achives/compression
+    geteltorito
   ];
 }
