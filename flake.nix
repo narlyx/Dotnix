@@ -1,57 +1,85 @@
 {
-  # Flake description
+  # Description
   description = "The new nix config :sob:";
 
-  # Inputs
+  # Inputs section
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     # Darwin
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Mac app util
+    # Mac app utility
     mac-app-util.url = "github:hraban/mac-app-util";
 
-    # Brew-nix
+    # Homebrew packages
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
       inputs.brew-api.follows = "brew-api";
     };
     brew-api = {
-      url = "github:BatteredBunny/brew-api";
+    url = "github:BatteredBunny/brew-api";
       flake = false;
     };
   };
+  # End of inputs
 
-  # Outputs
-  outputs = { self, nixpkgs, home-manager, nix-darwin, brew-nix, mac-app-util, ... } @ inputs: let
+  # Outputs section
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    nix-darwin,
+    brew-nix,
+    mac-app-util,
+    ...
+    } @ inputs:
+  let 
     inherit (self) outputs;
   in {
+    # Modules
+    #nixosModules = import ./modules/nixos;
+    #darwinModules = import ./modules/darwin;
+    #homeModules = import ./modules/home;
+
     # NixOS configurations
     nixosConfigurations = {
-      "lunathor" = nixpkgs.lib.nixosSystem {
+      "nexora" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs outputs; };
-        modules = [ 
-          ./hosts/lunathor
+        modules = [
+          ./hosts/nexora
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.narlyx = import ./home/nixos.nix;
+            home-manager.users.narlyx = import ./home/narlyx/nixos.nix;
+          }
+        ];
+      };
+      "acetylene" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          ./hosts/acetylene
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.narlyx = import ./home/narlyx/nixos.nix;
           }
         ];
       };
     };
+    # End of NixOS configurations
 
     # Darwin configurations
     darwinConfigurations = {
@@ -61,19 +89,19 @@
         modules = [
           ./hosts/arsenic
           brew-nix.darwinModules.default
-          ( { ... }: {
-            brew-nix.enable = true;
-          })
+          ( { ... }: { brew-nix.enable = true; })
           mac-app-util.darwinModules.default
-          home-manager.darwinModules.home-manager {
+          home-manager.darwinModules.home-manager
+          {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.sharedModules = [ mac-app-util.homeManagerModules.default ];
-            home-manager.backupFileExtension = "backup";
-            home-manager.users.narlyx = import ./home/darwin.nix;
+            home-manager.users.narlyx = import ./home/narlyx/darwin.nix;
           }
         ];
       };
     };
+    # End of Darwin configurations
   };
+  # End of outputs
 }
