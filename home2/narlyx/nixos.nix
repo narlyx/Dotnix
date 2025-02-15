@@ -19,7 +19,6 @@
       onlyoffice-desktopeditors
 
       # Devel
-      python312
       android-tools
       android-studio
 

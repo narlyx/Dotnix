@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./common/wms/hyprland
+    ./common/features/python.nix
   ];
 
   home = {
