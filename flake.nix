@@ -1,10 +1,9 @@
 {
-  # Description
-  description = "The new nix config :sob:";
-
+  description = "Configurations for Narlyx";
+  
   # Inputs section
   inputs = {
-    # Nixpkgs
+    # Packages
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     # Home manager
@@ -13,29 +12,32 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Darwin
+    # Darwin (macos)
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # Aylurs gtk shell
+    ags.url = "github:aylur/ags";
 
     # Mac app utility
     mac-app-util.url = "github:hraban/mac-app-util";
 
-    # Homebrew packages
+    # Homebrew support
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
       inputs.brew-api.follows = "brew-api";
     };
     brew-api = {
-    url = "github:BatteredBunny/brew-api";
+      url = "github:BatteredBunny/brew-api";
       flake = false;
     };
   };
   # End of inputs
 
   # Outputs section
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
@@ -43,65 +45,30 @@
     brew-nix,
     mac-app-util,
     ...
-    } @ inputs:
-  let 
-    inherit (self) outputs;
-  in {
-    # Modules
-    #nixosModules = import ./modules/nixos;
-    #darwinModules = import ./modules/darwin;
-    #homeModules = import ./modules/home;
-
-    # NixOS configurations
+  }: {
+    # Nixos configurations
     nixosConfigurations = {
       "nexora" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs outputs; };
+        system = "x86_84-linux";
+        specialArgs = {inherit inputs;};
         modules = [
-          ./hosts/nexora
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.narlyx = import ./home/narlyx/nixos.nix;
-          }
-        ];
-      };
-      "acetylene" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs outputs; };
-        modules = [
-          ./hosts/acetylene
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.narlyx = import ./home/narlyx/nixos.nix;
-          }
+          (import ./hosts/nixos/nexora)
         ];
       };
     };
-    # End of NixOS configurations
+    # End of nixos configurations
 
     # Darwin configurations
     darwinConfigurations = {
       "arsenic" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        specialArgs = { inherit inputs outputs nix-darwin; };
+        specialArgs = {inherit inputs;};
         modules = [
-          ./hosts/arsenic
-          brew-nix.darwinModules.default
-          ( { ... }: { brew-nix.enable = true; })
-          mac-app-util.darwinModules.default
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.sharedModules = [ mac-app-util.homeManagerModules.default ];
-            home-manager.users.narlyx = import ./home/narlyx/darwin.nix;
-          }
+          import ./hosts/macos/arsenic
         ];
       };
     };
-    # End of Darwin configurations
+    # End of darwin configurations
   };
   # End of outputs
 }
