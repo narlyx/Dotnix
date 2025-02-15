@@ -17,4 +17,7 @@
     computerName = "arsenic";
     hostName = "arsenic";
   };
+
+  # System version
+  system.stateVersion = 6;
 }

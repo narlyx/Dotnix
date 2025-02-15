@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
-    imputs.brew-nix.darwinModules.default
+    inputs.home-manager.darwinModules.home-manager
+    inputs.brew-nix.darwinModules.default
     inputs.mac-app-util.darwinModules.default
   ];
 
@@ -16,14 +16,14 @@
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
-  activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh narlyx'';
+  system.activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh narlyx'';
 
   home-manager = {
     backupFileExtension = "backup";
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs;};
-    sharedModules = [ mac-app-util.homeManagerModules.default ];
+    sharedModules = [ inputs.mac-app-util.homeManagerModules.default ];
     users."narlyx" = {
       home.username = "narlyx";
       home.homeDirectory = "/Users/narlyx";

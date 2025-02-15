@@ -50,7 +50,7 @@
     nixosConfigurations = {
       "nexora" = nixpkgs.lib.nixosSystem {
         system = "x86_84-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = { inherit inputs; };
         modules = [
           (import ./hosts/nixos/nexora)
         ];
@@ -62,9 +62,9 @@
     darwinConfigurations = {
       "arsenic" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        specialArgs = {inherit inputs;};
+        specialArgs = { inherit inputs; };
         modules = [
-          import ./hosts/macos/arsenic
+          (import ./hosts/macos/arsenic)
         ];
       };
     };
