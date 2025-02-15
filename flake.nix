@@ -55,6 +55,13 @@
           (import ./hosts/nixos/nexora)
         ];
       };
+      "acetylene" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          (import ./hosts/nixos/acetylene)
+        ];
+      };
     };
     # End of nixos configurations
 
