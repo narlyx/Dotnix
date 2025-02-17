@@ -5,8 +5,12 @@
 }: {
   # Imports
   imports = [
+    # Backend
     inputs.ags.homeManagerModules.default
-    ./hypr.nix
+    ./hypr/settings.nix
+
+    # Desktop apps
+    ../features/librewolf
   ];
 
   # Packages

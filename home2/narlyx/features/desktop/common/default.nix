@@ -3,7 +3,6 @@
 {
   imports = [
     ./ghostty.nix
-    ./librewolf.nix
   ];
 
   home.packages = with pkgs; [

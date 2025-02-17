@@ -7,7 +7,7 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  programs.zsh.enable = true;
+  environment.systemPackages = [ pkgs.nushell ];
 
   users.users.narlyx = {
     isNormalUser = true;
@@ -20,7 +20,7 @@
       "networkmanager"
       "docker"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
   };
 
   home-manager = {

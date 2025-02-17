@@ -4,8 +4,15 @@
   ...
 }: {
   imports = [
-    ./common/wms/hyprland
-    ./common/features/python.nix
+    # Desktop
+    ./common/environments/hyprland
+
+    # Shell
+    ./common/features/nushell
+    ./common/features/git
+
+    # Development
+    ./common/features/python
   ];
 
   home = {
