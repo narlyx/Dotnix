@@ -10,7 +10,7 @@
     ./hypr/settings.nix
 
     # Desktop apps
-    ../features/librewolf
+    ../../features/librewolf
   ];
 
   # Packages

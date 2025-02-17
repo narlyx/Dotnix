@@ -1,6 +1,6 @@
 {
   description = "Configurations for Narlyx";
-  
+
   # Inputs section
   inputs = {
     # Packages
@@ -32,6 +32,12 @@
     brew-api = {
       url = "github:BatteredBunny/brew-api";
       flake = false;
+    };
+
+    # Nvf (NeoVim)
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   # End of inputs

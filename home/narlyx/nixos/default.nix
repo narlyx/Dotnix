@@ -10,6 +10,7 @@
     # Shell
     ./common/features/nushell
     ./common/features/git
+    ./common/features/neovim
 
     # Development
     ./common/features/python
