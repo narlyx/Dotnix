@@ -80,20 +80,25 @@
         treesitter.context.enable = true;
 
         binds = {
+          cheatsheet.enable = true;
           whichKey.enable = true;
         };
+
+        keymaps = [
+          {
+            key = "<leader>n";
+            mode = ["n"];
+            action = ":Neotree<cr>";
+            silent = true;
+            desc = "Neo-tree";
+          }
+        ];
 
         telescope.enable = true;
 
         git = {
           enable = true;
           gitsigns.enable = false;
-        };
-
-        dashboard.alpha.enable = true;
-
-        utility = {
-          diffview-nvim.enable = true;
         };
 
         ui = {

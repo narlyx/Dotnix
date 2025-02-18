@@ -1,11 +1,9 @@
-{
-  pkgs,
-  ...
-}: {
-
+{pkgs, ...}: {
   home.packages = [
-    (pkgs.python312.withPackages(p: with p; [
-      requests
-    ]))
+    (pkgs.python312.withPackages (p:
+      with p; [
+        requests
+        tkinter
+      ]))
   ];
 }
