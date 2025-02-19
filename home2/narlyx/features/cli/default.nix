@@ -1,9 +1,6 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # Other files
   imports = [
-    ./zsh.nix
     ./git.nix
     ./neovim.nix
     ./tmux.nix

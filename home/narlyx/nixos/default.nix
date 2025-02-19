@@ -1,14 +1,10 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{...}: {
   imports = [
     # Desktop
     ./common/environments/hyprland
 
     # Shell
-    ./common/features/nushell
+    ./common/features/shell
     ./common/features/git
     ./common/features/neovim
 
@@ -17,9 +13,6 @@
   ];
 
   home = {
-    packages = with pkgs; [
-    ];
-
     stateVersion = "24.11";
   };
 

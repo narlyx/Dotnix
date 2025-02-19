@@ -7,7 +7,7 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  environment.systemPackages = [ pkgs.nushell ];
+  programs.zsh.enable = true;
 
   users.users.narlyx = {
     isNormalUser = true;
@@ -20,7 +20,7 @@
       "networkmanager"
       "docker"
     ];
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
   };
 
   home-manager = {
@@ -31,7 +31,7 @@
     users."narlyx" = {
       home.username = "narlyx";
       home.homeDirectory = "/home/narlyx";
-      imports = [ ../../../../home2/narlyx/nixos.nix ../../../../home/narlyx/nixos ];
+      imports = [../../../../home2/narlyx/nixos.nix ../../../../home/narlyx/nixos];
     };
   };
 }
