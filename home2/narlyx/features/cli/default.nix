@@ -1,9 +1,6 @@
 {pkgs, ...}: {
   # Other files
   imports = [
-    ./git.nix
-    ./neovim.nix
-    ./tmux.nix
   ];
 
   # Other tools
