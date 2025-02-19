@@ -3,7 +3,6 @@
 {
   imports = [
     ./features/cli
-    ./features/cli/nushell.nix
     ./features/desktop/darwin
   ];
 
