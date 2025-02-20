@@ -121,7 +121,7 @@
       "$mainMod, left, workspace, e-1"
       "$mainMod, right, workspace, e+1"
     ];
-      
+
     # Volume
     bindel = [
       ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
@@ -145,6 +145,12 @@
       # Brightness
       ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
       ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+    ];
+
+    # Mouse
+    bindm = [
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resizewindow"
     ];
 
     # Rules
