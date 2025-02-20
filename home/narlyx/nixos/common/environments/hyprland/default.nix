@@ -33,7 +33,7 @@
   programs.ags = {
     enable = true;
     configDir = ./ags;
-    extraPackages = with pkgs; [
+    extraPackages = [
       inputs.ags.packages.${pkgs.system}.hyprland
       inputs.ags.packages.${pkgs.system}.tray
     ];
