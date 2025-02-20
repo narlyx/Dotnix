@@ -7,5 +7,6 @@
     ./networking.nix
     ./nixSettings.nix
     ./packages.nix
+    ../features/gnupg.nix
   ];
 }
