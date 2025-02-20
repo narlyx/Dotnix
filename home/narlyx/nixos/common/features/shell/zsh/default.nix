@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    zoxide
     eza
     bat
     fzf
@@ -28,7 +27,7 @@
 
     # Configuration
     initExtraFirst = ''
-      eval "$(zoxide init zsh)"
+
     '';
     initExtra = ''
 
@@ -37,7 +36,6 @@
     # Aliases
     shellAliases = {
       "cls" = "clear";
-      "cd" = "z";
       "l" = "eza --oneline --icons --git";
       "ls" = "eza --oneline --icons --git";
       "la" = "eza --oneline -ah --icons --git";
