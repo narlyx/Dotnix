@@ -46,7 +46,7 @@ function SysTray() {
   )
 }
 
-function Clock({format = "%a %b %I:%M %p"}) {
+function Clock({format = "%a %b %e %I:%M %p"}) {
   const time = Variable<string>("").poll(1000, () =>
     GLib.DateTime.new_now_local().format(format)!)
   return (
