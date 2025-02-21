@@ -11,8 +11,12 @@
     ];
 
     # Autostart
-    exec-once = [
+    exec = [
       "tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE '$HYPRLAND_INSTANCE_SIGNATURE'"
+      "ags quit"
+      "ags run"
+    ];
+    exec-once = [
       "walker --gapplication-service"
       "swww-daemon"
     ];
@@ -82,6 +86,7 @@
       "$mainMod, F, togglefloating,"
       "$mainMod SHIFT, F, fullscreen"
       "$mainMod, M, exit,"
+      "$mainMod SHIFT, R, exec, hyprctl reload"
 
       # Navigation
       "$mainMod, H, movefocus, l"

@@ -33,9 +33,12 @@
   programs.ags = {
     enable = true;
     configDir = ./ags;
-    extraPackages = [
-      inputs.ags.packages.${pkgs.system}.hyprland
-      inputs.ags.packages.${pkgs.system}.tray
+    extraPackages = with inputs.ags.packages.${pkgs.system}; [
+      battery
+      hyprland
+      tray
+      wireplumber
+      network
     ];
   };
 }

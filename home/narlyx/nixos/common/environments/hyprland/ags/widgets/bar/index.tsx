@@ -1,42 +1,20 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
-import { Variable, bind } from "astal"
+import { bind, Variable, GLib } from "astal"
 import AstalHyprland from "gi://AstalHyprland"
 import AstalTray from "gi://AstalTray"
 
-function Launcher() {
-  return (
-    <box className="Launcher">
-       
-    </box>
-  );
-}
+// Global vars
+const {TOP,LEFT,RIGHT} = Astal.WindowAnchor
+const hypr = AstalHyprland.get_default()
+const tray = AstalTray.get_default()
 
-function SysTray() {
-  const tray = AstalTray.get_default()
-
-  return (
-    <box className="SysTray">
-      {bind(tray, "items").as(items => items.map(item => (
-        <menubutton
-          tooltipMarkup={bind(item, "tooltipMarkup")}
-          usePopover={false}
-          actionGroup={bind(item, "actionGroup").as(ag => ["dbusmenu", ag])}
-    menuModel={bind(item, "menuModel")}>
-          <icon gicon={bind(item, "gicon")} />
-        </menubutton>
-      )))}
-    </box>
-  );
-}
-
+// Hyprland workspace module
 function Workspaces() {
-  const hypr = AstalHyprland.get_default()
-
   return (
-    <box className="Workspaces">
+    <box className={"WorkspaceModule"}>
       {bind(hypr, "workspaces").as(wss => wss
         .filter(ws => !(ws.id >= -99 && ws.id <= -2))
-        .sort((a, b) => a.id - b.id)
+        .sort((a,b) => a.id - b.id)
         .map(ws => (
           <button
             className={bind(hypr, "focusedWorkspace").as(fw =>
@@ -47,45 +25,81 @@ function Workspaces() {
         ))
       )}
     </box>
-  );
+  )
 }
 
-function FocusedClient() {
-  const hypr = AstalHyprland.get_default()
-  const focused = bind(hypr, "focusedClient")
-
+// System tray module
+function SysTray() {
   return (
-    <box
-      className="focused"
-      visible={focused.as(Boolean)}>
-      {focused.as(client => (
-        client && <label label={bind(client, "title").as(String)} />
-      ))}
+    <box className={"SysTrayModule"}>
+      {bind(tray, "items").as(items => items.map(item => (
+        <menubutton
+          tooltipMarkup={bind(item, "tooltipMarkup")}
+          usePopover={false}
+          actionGroup={bind(item, "actionGroup")
+            .as(ag => ["dbusmenu",ag ])}
+          menuModel={bind(item, "menuModel")}>
+          <icon gicon={bind(item, "gicon")} />
+        </menubutton>
+      )))}
     </box>
-  );
+  )
 }
 
-export default function Bar(monitor: Gdk.Monitor) {
-  const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
+function Clock({format = "%a %b %I:%M %p"}) {
+  const time = Variable<string>("").poll(1000, () =>
+    GLib.DateTime.new_now_local().format(format)!)
+  return (
+    <label
+      className={"ClockModule"}
+      onDestroy={() => time.drop()}>
+      {time()}
+    </label>
+  )
+}
 
+// Defines modules for the left side
+function LeftModules() {
+  return (
+    <Workspaces />
+  )
+}
+
+// Defines modules for the center
+function CenterModules() {
+  return (
+    <label>
+      Center
+    </label>
+  )
+}
+
+// Defines a window for the bar
+function BarLayout(monitor: Gdk.Monitor) {
   return (
     <window
-      className="Bar"
+      className={"Bar"}
       gdkmonitor={monitor}
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       anchor={TOP|LEFT|RIGHT}
       application={App}>
       <centerbox>
         <box hexpand halign={Gtk.Align.START}>
-          <Launcher />
-          <Workspaces />
+          <LeftModules />
         </box>
         <box>
+          <CenterModules />
         </box>
         <box hexpand halign={Gtk.Align.END}>
           <SysTray />
+          <Clock />
         </box>
       </centerbox>
     </window>
-  );
+  )
+}
+
+// Entry point
+export default function Bar(monitor: Gdk.Monitor) {
+  return BarLayout(monitor)
 }
