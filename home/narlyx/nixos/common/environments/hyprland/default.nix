@@ -7,6 +7,8 @@
   imports = [
     # Backend
     inputs.ags.homeManagerModules.default
+    ./hypr/autostart.nix
+    ./hypr/binds.nix
     ./hypr/settings.nix
 
     # Desktop apps
@@ -19,6 +21,10 @@
     brightnessctl
     swww
     walker
+    jq
+    grim
+    slurp
+    swappy
     gtk3
     gtk4
   ];
@@ -28,6 +34,7 @@
     # Enabling hyprland for home-manager
     enable = true;
   };
+  home.file.".config/hypr/screenshot.sh".source = ./hypr/screenshot.sh;
 
   # AGS configuration
   programs.ags = {
