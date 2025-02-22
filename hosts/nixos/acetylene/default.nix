@@ -12,6 +12,7 @@
     ../common/environments/hyprland.nix
     ../common/features/tailscale.nix
     ../common/features/virtualisation.nix
+    ../common/features/flatpak.nix
   ];
 
   # Hostname
