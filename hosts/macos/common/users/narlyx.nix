@@ -23,11 +23,12 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs;};
-    sharedModules = [ inputs.mac-app-util.homeManagerModules.default ];
+    sharedModules = [inputs.mac-app-util.homeManagerModules.default];
     users."narlyx" = {
       home.username = "narlyx";
       home.homeDirectory = "/Users/narlyx";
-      imports = [ ../../../../home2/narlyx/darwin.nix ../../../../home/narlyx/macos];
+      programs.home-manager.enable = true;
+      imports = [../../../../home/narlyx/macos];
     };
   };
 }

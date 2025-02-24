@@ -31,7 +31,8 @@
     users."narlyx" = {
       home.username = "narlyx";
       home.homeDirectory = "/home/narlyx";
-      imports = [../../../../home2/narlyx/nixos.nix ../../../../home/narlyx/nixos];
+      programs.home-manger.enable = true;
+      imports = [../../../../home/narlyx/nixos];
     };
   };
 }

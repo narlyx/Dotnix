@@ -1,20 +1,12 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     # Desktop
-    ./common/environments/hyprland
-
-    # Shell
-    ./common/features/shell
-    ./common/features/git
-    ./common/features/neovim
+    ../common/environments/hyprland
 
     # Development
-    ./common/features/python
+    ../common/features/python
   ];
-
-  home = {
-    stateVersion = "24.11";
-  };
+  home.stateVersion = "24.11";
 
   programs.home-manager.enable = true;
 }

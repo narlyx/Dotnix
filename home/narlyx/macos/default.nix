@@ -1,8 +1,12 @@
-
 {...}: {
   imports = [
-    ../nixos/common/features/shell
-    ../nixos/common/features/git
-    ../nixos/common/features/neovim
+    # Desktop
+    ../common/environments/darwin
+
+    # Development
+    ../common/features/python
   ];
+  home.stateVersion = "25.05";
+
+  programs.home-manager.enable = true;
 }

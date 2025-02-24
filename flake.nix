@@ -17,7 +17,7 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     # Aylurs gtk shell
     ags.url = "github:aylur/ags";
 
@@ -52,18 +52,21 @@
     mac-app-util,
     ...
   }: {
+    # Overlays
+    overlays = import ./overlays {inherit inputs;};
+
     # Nixos configurations
     nixosConfigurations = {
       "nexora" = nixpkgs.lib.nixosSystem {
         system = "x86_84-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
         modules = [
           (import ./hosts/nixos/nexora)
         ];
       };
       "acetylene" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
         modules = [
           (import ./hosts/nixos/acetylene)
         ];
@@ -75,7 +78,7 @@
     darwinConfigurations = {
       "arsenic" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
         modules = [
           (import ./hosts/macos/arsenic)
         ];
