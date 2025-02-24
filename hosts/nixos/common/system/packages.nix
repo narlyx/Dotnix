@@ -6,5 +6,6 @@
     vim
     exfat
     geteltorito
+    unzip
   ];
 }
