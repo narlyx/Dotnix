@@ -9,6 +9,7 @@
     inputs.ags.homeManagerModules.default
     ./hypr/autostart.nix
     ./hypr/binds.nix
+    ./hypr/monitors.nix
     ./hypr/settings.nix
 
     # Desktop apps

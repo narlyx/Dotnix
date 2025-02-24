@@ -1,15 +1,5 @@
 {
   wayland.windowManager.hyprland.settings = {
-    # Monitors
-    monitor = [
-      # Other
-      ", preferred, auto, 1"
-
-      # Thinkpad
-      "eDP-1, 1920x1080, 0x0, 1"
-      "DP-2, 1920x1080@100.00Hz, 0x-180, 1"
-    ];
-
     # Look and feel
     general = {
       gaps_in = 5;
