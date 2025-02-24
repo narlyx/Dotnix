@@ -46,10 +46,7 @@
   outputs = inputs @ {
     self,
     nixpkgs,
-    home-manager,
     nix-darwin,
-    brew-nix,
-    mac-app-util,
     ...
   }: {
     # Overlays
