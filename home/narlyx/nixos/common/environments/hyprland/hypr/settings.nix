@@ -55,7 +55,7 @@
     };
 
     device = {
-      name = "elan-touchpad";
+      name = "synps/2-synaptics-touchpad";
       accel_profile = "adaptive";
       sensitivity = 0;
     };

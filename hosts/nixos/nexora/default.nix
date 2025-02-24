@@ -1,8 +1,4 @@
-{
-  inputs,
-  lib,
-  ...
-}: {
+{...}: {
   # Imports section
   imports = [
     ./hardware-configuration.nix
@@ -15,6 +11,14 @@
 
   # Hostname
   networking.hostName = "nexora";
+
+  # Touchpad fix
+  environment.etc."modprobe.d/psmouse.conf".text = ''
+    options psmouse synaptics_intertouch=1
+  '';
+
+  # Other services
+  services.fwupd.enable = true;
 
   # System version
   system.stateVersion = "24.11";
