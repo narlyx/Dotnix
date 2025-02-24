@@ -32,24 +32,6 @@
       disable_hyprland_logo = true;
     };
 
-    # Input
-    input = {
-      kb_layout = "us";
-      follow_mouse = 1;
-      sensitivity = 0;
-      accel_profile = "flat";
-      touchpad = {
-        natural_scroll = "yes";
-        scroll_factor = 0.25;
-      };
-    };
-
-    device = {
-      name = "synps/2-synaptics-touchpad";
-      accel_profile = "adaptive";
-      sensitivity = 0;
-    };
-
     # Rules
     windowrulev2 = [
       "suppressevent maximize, class:.*"

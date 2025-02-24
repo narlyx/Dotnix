@@ -11,6 +11,7 @@
     ./hypr/binds.nix
     ./hypr/monitors.nix
     ./hypr/settings.nix
+    ./hypr/input.nix
 
     # Desktop apps
     ../../features/librewolf
