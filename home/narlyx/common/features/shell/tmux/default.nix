@@ -30,6 +30,9 @@
       set -g renumber-windows on
       set-option -g allow-rename off
 
+      # Window resizing
+      set-option -w -g aggressive-resize on
+
       # Creating new session
       bind S command-prompt -p "New Session:" "new-session -A -s '%%'"
 
