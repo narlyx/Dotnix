@@ -2,11 +2,15 @@ import { App, Astal, Gtk, Gdk } from "astal/gtk3"
 import { bind, Variable, GLib } from "astal"
 import AstalHyprland from "gi://AstalHyprland"
 import AstalTray from "gi://AstalTray"
+import AstalBattery from "gi://AstalBattery"
+import AstalWp from "gi://AstalWp"
 
 // Global vars
 const {TOP,LEFT,RIGHT} = Astal.WindowAnchor
 const hypr = AstalHyprland.get_default()
 const tray = AstalTray.get_default()
+const bat = AstalBattery.get_default()
+const speaker = AstalWp.get_default()?.audio.defaultSpeaker!
 
 // Hyprland workspace module
 function Workspaces() {
@@ -46,15 +50,40 @@ function SysTray() {
   )
 }
 
-function Clock({format = "%a %b %e %I:%M %p"}) {
+function Audio() {
+  return (
+    <box
+      className={"Audio"}>
+      <icon icon={bind(speaker, "volumeIcon")} />
+      <label label={bind(speaker, "volume").as(p =>
+        `${Math.floor(p * 100)}%`)} />
+    </box>
+  )
+}
+
+function Battery() {
+  return (
+    <box
+      className={"Battery"}
+      visible={bind(bat, "isPresent")}>
+      <icon icon={bind(bat, "batteryIconName")} />
+      <label label={bind(bat, "percentage").as(p =>
+        `${Math.floor(p * 100)} %`)} />
+    </box>
+  )
+}
+
+// %a %b %e %I:%H %p
+function Clock({format = "%I:%M %p"}) {
   const time = Variable<string>("").poll(1000, () =>
     GLib.DateTime.new_now_local().format(format)!)
   return (
-    <label
+    <box
       className={"ClockModule"}
       onDestroy={() => time.drop()}>
-      {time()}
-    </label>
+      <icon icon="clock" />
+      <label>{time()}</label>
+    </box>
   )
 }
 
@@ -92,6 +121,8 @@ function BarLayout(monitor: Gdk.Monitor) {
         </box>
         <box hexpand halign={Gtk.Align.END}>
           <SysTray />
+          <Audio />
+          <Battery />
           <Clock />
         </box>
       </centerbox>
