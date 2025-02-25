@@ -5,5 +5,6 @@
     ./zoxide
     ./starship
     ./tmux
+    ./neofetch
   ];
 }
