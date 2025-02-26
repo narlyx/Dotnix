@@ -30,6 +30,8 @@
     vesktop
     neovide
     qbittorrent
+    zoom-us
+    anytype
 
     # Dependencies
     playerctl
@@ -89,6 +91,14 @@
     font = {
       name = "Sans";
       size = 11;
+    };
+  };
+  qt = {
+    enable = true;
+    platformTheme.name = "qt5ct";
+    style = {
+      package = pkgs.catppuccin-qt5ct;
+      name = "Catppuccin-Frappe";
     };
   };
 }
