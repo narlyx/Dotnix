@@ -1,3 +1,9 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [go];
+  home.sessionVariables = {
+    CGO_ENABLED = 1;
+  };
+  home.packages = with pkgs; [
+    go
+    gcc
+  ];
 }
