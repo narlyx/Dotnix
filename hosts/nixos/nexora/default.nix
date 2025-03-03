@@ -8,6 +8,7 @@
     ../common/features/virtualisation.nix
     ../common/features/tailscale.nix
   ];
+  home-manager.users."narlyx".imports = [../../../home/narlyx/nixos];
 
   # Hostname
   networking.hostName = "nexora";

@@ -13,7 +13,7 @@
       macos-option-as-alt = true;
       mouse-hide-while-typing = true;
       confirm-close-surface = false;
-      window-decoration = true;
+      window-decoration = "server";
       window-padding-x = 10;
       window-padding-y = 10;
       window-padding-balance = true;

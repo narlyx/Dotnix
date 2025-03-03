@@ -14,6 +14,7 @@
     ../common/features/virtualisation.nix
     ../common/features/flatpak.nix
   ];
+  home-manager.users."narlyx".imports = [../../../home/narlyx/nixos];
 
   # Hostname
   networking.hostName = "acetylene";
@@ -25,8 +26,8 @@
 
   # GPU Passthough
   boot = {
-    kernelParams = [ "kvm-amd" "amd_iommu=on" ];
-    kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
+    kernelParams = ["kvm-amd" "amd_iommu=on"];
+    kernelModules = ["vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio"];
     postBootCommands = ''
       HOSTDEVS="0000:0b:00.0 0000:0b:00.1"
       VFIODEVS="0000:0e:00.0 0000:0e:00.1"
