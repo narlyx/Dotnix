@@ -4,6 +4,7 @@
     /etc/nixos/apple-silicon-support
     ../common/system
     ../common/users
+    ../common/features/tailscale.nix
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/asahi.nix];
 
