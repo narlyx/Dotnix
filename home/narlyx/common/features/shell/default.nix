@@ -6,5 +6,7 @@
     ./starship
     ./tmux
     ./neofetch
+    ./git
+    ./neovim
   ];
 }
