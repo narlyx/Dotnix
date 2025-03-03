@@ -19,7 +19,7 @@
   system.activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh narlyx'';
 
   home-manager = {
-    backupFileExtension = "backup";
+    backupFileExtension = "bak";
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs;};

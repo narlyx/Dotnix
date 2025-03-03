@@ -1,11 +1,7 @@
 {...}: {
   imports = [
-    # Desktop
     ../common/environments/darwin
-
-    # Development
-    ../common/features/python
-    ../common/features/go
+    ../common/features/development
   ];
   home.stateVersion = "25.05";
 }

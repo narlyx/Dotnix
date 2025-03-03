@@ -3,8 +3,6 @@
     ../../features/librewolf
     ../../features/wezterm
     ../../features/shell
-    ../../features/git
-    ../../features/neovim
     ../../features/syncthing
   ];
 

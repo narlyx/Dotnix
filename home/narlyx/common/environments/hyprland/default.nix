@@ -17,8 +17,6 @@
     ../../features/librewolf
     ../../features/ghostty
     ../../features/shell
-    ../../features/git
-    ../../features/neovim
     ../../features/syncthing
   ];
 
