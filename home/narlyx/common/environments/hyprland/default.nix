@@ -21,6 +21,7 @@
     neovide
     qbittorrent
     zoom-us
+    onlyoffice-desktopeditors
   ];
 
   # Cursor

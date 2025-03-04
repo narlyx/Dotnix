@@ -7,6 +7,7 @@
     ../common/environments/hyprland.nix
     ../common/features/virtualisation.nix
     ../common/features/tailscale.nix
+    ../common/features/printing.nix
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos];
 
