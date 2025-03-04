@@ -10,7 +10,6 @@
         scroll_factor = 0.25;
       };
     };
-
     device = {
       name = "synaptics-tm3293-011";
       accel_profile = "adaptive";

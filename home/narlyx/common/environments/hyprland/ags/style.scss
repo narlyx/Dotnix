@@ -1,4 +1,44 @@
-* { all: unset }
+$main-color: #bcc0cc;
+$base-color: #4c4f69;
+//$base-color: #474747;
+//$main-color: #CCCCCC;
 
 window.Bar {
+  color: $main-color;
+  font-size: 14px;
+
+  centerbox {
+    padding: 10px 10px 0 10px;
+  }
+
+  .Workspaces {
+    button {
+      all: unset;
+      margin-right: 4px;
+    }
+
+    box {
+      background: transparent;
+      transition: 250ms;
+      border-radius: 4px;
+      padding: 3px 5px;
+    }
+
+    .focused box {
+      background: $main-color;
+    }
+
+    label {
+      color: $main-color;
+      transition: 500ms;
+    }
+
+    .focused label {
+      color: $base-color;
+    }
+
+    icon {
+      color: $base-color;
+    }
+  }
 }
