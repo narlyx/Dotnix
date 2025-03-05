@@ -8,7 +8,6 @@
     ./neofetch
     ./git
     ./neovim
-    ./lf
     ./ranger
   ];
 }

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 # bind = , Print, exec, ~/.config/hypr/screenshot.sh region
 # bind = SHIFT, Print, exec, ~/.config/hypr/screenshot.sh window
 # bind = CTRL, Print, exec, ~/.config/hypr/screenshot.sh output
