@@ -107,6 +107,18 @@
           colorizer.enable = true;
           illuminate.enable = true;
         };
+
+        notes.obsidian = {
+          enable = true;
+          setupOpts = {
+            workspaces = [
+              {
+                name = "Docuents";
+                path = "~/Documents";
+              }
+            ];
+          };
+        };
       };
     };
   };
