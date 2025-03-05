@@ -9,8 +9,8 @@
 
       # Custom format
       format = lib.concatStrings [
-        "[╭─](bold white)$os$shell$directory$git_status\n"
-        "[╰─](bold white)$character"
+        "[╭─](bold white)$os$hostname$directory$git_status\n"
+        "[╰─](bold white)$shell$character"
       ];
 
       # Prompt character
@@ -30,20 +30,34 @@
       # Shell labels
       shell = {
         disabled = false;
-        style = "bold purple";
+        style = "italic white";
         zsh_indicator = "zsh";
         nu_indicator = "nu";
         unknown_indicator = "???";
       };
 
+      # User name
+      username = {
+        disabled = false;
+        show_always = true;
+        format = "[$user](bold italic green) ";
+      };
+
+      # Host name
+      hostname = {
+        disabled = false;
+        ssh_only = false;
+        format = "[@$hostname](bold italic green) ";
+      };
+
       # Operating system icons
       os = {
         disabled = false;
-        format = "[$symbol](bold white)";
+        format = "[$symbol](bold white) ";
         symbols = {
-          NixOS = " ";
-          Macos = " ";
-          Unknown = " ";
+          NixOS = "";
+          Macos = "";
+          Unknown = "";
         };
       };
 
