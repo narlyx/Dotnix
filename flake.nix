@@ -61,13 +61,6 @@
           (import ./hosts/nixos/nexora)
         ];
       };
-      "arsenic-linux" = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ( import ./hosts/nixos/arsenic)
-        ];
-      };
       "acetylene" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
