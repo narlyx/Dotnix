@@ -11,6 +11,7 @@
     ../../features/ghostty
     ../../features/shell
     ../../features/syncthing
+    ../../features/spotify-tui
   ];
 
   # Packages
