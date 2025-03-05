@@ -1,8 +1,30 @@
 {pkgs, ...}: {
+  # Dependencies
   home.packages = with pkgs; [
     gh
   ];
 
+  # Terminal interface
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      gui = {
+        theme = {
+          activeBorderColor = ["#8caaee"];
+          inactiveBorderColor = ["#a5adce"];
+          optionsTextColor = ["#8caaee"];
+          selectedLineBgColor = ["#414559"];
+          cherryPickedCommitBgColor = ["#51576d"];
+          cherryPickedCommitFgColor = ["#8caaee"];
+          unstagedChangesColor = ["#e78284"];
+          defaultFgColor = ["#c6d0f5"];
+          searchingActiveBorderColor = ["#e5c890"];
+        };
+      };
+    };
+  };
+
+  # Git command
   programs.git = {
     enable = true;
 
