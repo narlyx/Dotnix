@@ -6,6 +6,7 @@
     ../common/users
     ../common/features/tailscale.nix
     ../common/features/ssh.nix
+    ../common/features/docker.nix
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/server.nix];
 
