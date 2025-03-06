@@ -5,13 +5,12 @@
     ../common/system
     ../common/users
     ../common/features/tailscale.nix
+    ../common/features/ssh.nix
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/server.nix];
 
-  # Hostname
+  # Host name
   networking.hostName = "veylith";
-
-  services.openssh.enable = true;
 
   # System version
   system.stateVersion = "24.11";

@@ -1,10 +1,4 @@
 {
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
   # Imports section
   imports = [
     ../common/system
@@ -12,7 +6,7 @@
     ../common/features/tailscale.nix
   ];
 
-  # Hostname
+  # Host name
   networking = {
     computerName = "arsenic";
     hostName = "arsenic";

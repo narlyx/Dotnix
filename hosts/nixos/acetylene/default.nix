@@ -1,9 +1,4 @@
-{
-  inputs,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Imports section
   imports = [
     ./hardware-configuration.nix
@@ -16,15 +11,15 @@
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos];
 
-  # Hostname
+  # Host name
   networking.hostName = "acetylene";
 
-  # Uniquie packages
+  # Packages
   environment.systemPackages = with pkgs; [
     pciutils
   ];
 
-  # GPU Passthough
+  # GPU passthough
   boot = {
     kernelParams = ["kvm-amd" "amd_iommu=on"];
     kernelModules = ["vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio"];
