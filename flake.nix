@@ -68,6 +68,13 @@
           (import ./hosts/nixos/acetylene)
         ];
       };
+      "veylith" = nixpkgs.lib.nixosSystem {
+        system = "x86_84-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          (import ./hosts/nixos/veylith)
+        ];
+      };
     };
     # End of nixos configurations
 
