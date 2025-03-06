@@ -12,7 +12,7 @@
       else if osConfig.networking.hostName == "nexora"
       then [
         "eDP-1, 1920x1080, 0x0, 1"
-        "DP-2, 1920x1080@100.00Hz, 0x-1080, 1"
+        "DP-1, 1920x1080@100.00Hz, -1920x0, 1"
       ]
       else [];
   };
