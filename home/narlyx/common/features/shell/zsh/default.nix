@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  # Dependencies
   home.packages = with pkgs; [
     eza
     bat
@@ -6,8 +7,9 @@
     libnotify
   ];
 
+  # ZSH configuration
   programs.zsh = {
-    # Enabling zsh
+    # Enabling ZSH
     enable = true;
 
     # Plugins
@@ -27,7 +29,7 @@
 
     # Configuration
     initExtraFirst = ''
-
+      echo "Loading zsh..."
     '';
     initExtra = ''
 
