@@ -4,6 +4,7 @@
       with p; [
         requests
         tkinter
+        typer
       ]))
   ];
 }
