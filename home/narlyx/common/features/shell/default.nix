@@ -1,13 +1,21 @@
 {...}: {
   imports = [
+    # Shells
     ./zsh
     ./nushell
+
+    # Shell utilities
     ./zoxide
-    ./starship
+    ./thefuck
     ./tmux
+
+    # Prompts
+    ./starship
+
+    # Programs
     ./neofetch
-    ./git
     ./neovim
     ./ranger
+    ./git
   ];
 }
