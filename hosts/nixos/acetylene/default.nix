@@ -14,12 +14,31 @@
   # Host name
   networking.hostName = "acetylene";
 
+  # Special networking
+  networking = {
+    interfaces = {
+      enp5s0.useDHCP = true;
+      br0.useDHCP = true;
+    };
+    bridges = {
+      "br0" = {
+        interfaces = ["enp5s0"];
+      };
+    };
+  };
+
   # Packages
   environment.systemPackages = with pkgs; [
+    looking-glass-client
     pciutils
   ];
 
   # GPU passthough
+  systemd.tmpfiles.rules = [
+    "f /dev/shm/scream 0660 narlyx qemu-libvirtd -"
+    "f /dev/shm/looking-glass 0660 narlyx qemu-libvirtd -"
+  ];
+
   boot = {
     kernelParams = ["kvm-amd" "amd_iommu=on"];
     kernelModules = ["vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio"];
