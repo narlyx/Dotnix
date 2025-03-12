@@ -19,6 +19,12 @@
     utm
     qbittorrent
     raycast
+    (brewCasks.keyboardcleantool.overrideAttrs (o: {
+      src = pkgs.fetchurl {
+        url = builtins.head o.src.urls;
+        hash = "sha256-QQXyeWOwiBo5mtdwgVQYt2HXqkEu1jadgkaAnCKDsK4="; # Replace me with real hash after building once
+      };
+    }))
 
     # Literature
     brewCasks.koodo-reader
