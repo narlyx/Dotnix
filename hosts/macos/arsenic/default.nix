@@ -4,6 +4,7 @@
     ../common/system
     ../common/users
     ../common/features/tailscale.nix
+    ../common/features/yabai.nix
   ];
 
   # Host name
