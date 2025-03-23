@@ -4,10 +4,11 @@
     ./hardware-configuration.nix
     ../common/system
     ../common/users
-    ../common/environments/hyprland.nix
+    ../common/environments/plasma.nix
     ../common/features/tailscale.nix
     ../common/features/virtualisation.nix
     ../common/features/flatpak.nix
+    ../common/features/docker.nix
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos];
 

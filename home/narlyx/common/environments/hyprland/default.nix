@@ -23,6 +23,7 @@
     qbittorrent
     zoom-us
     onlyoffice-desktopeditors
+    strawberry
   ];
 
   # Cursor

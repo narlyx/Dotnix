@@ -14,7 +14,8 @@
       "$mainMod, Q, killactive,"
       "$mainMod, F, togglefloating,"
       "$mainMod SHIFT, F, fullscreen"
-      "$mainMod, M, exit,"
+      "$mainMod CTRL, Q, exit," # This will eventually lock screen
+      "$mainMod SHIFT, Q, exit,"
       "$mainMod SHIFT, R, exec, hyprctl reload"
 
       # Navigation
