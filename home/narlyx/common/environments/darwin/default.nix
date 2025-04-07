@@ -2,6 +2,7 @@
   imports = [
     ../../features/librewolf
     ../../features/ghostty
+    ../../features/wezterm
     ../../features/shell
     ../../features/syncthing
   ];
@@ -16,7 +17,6 @@
     # Utilities
     obsidian
     brewCasks.qflipper
-    utm
     qbittorrent
     raycast
     (brewCasks.keyboardcleantool.overrideAttrs (o: {
@@ -25,10 +25,8 @@
         hash = "sha256-QQXyeWOwiBo5mtdwgVQYt2HXqkEu1jadgkaAnCKDsK4="; # Replace me with real hash after building once
       };
     }))
-
-    # Literature
-    brewCasks.koodo-reader
-    brewCasks.calibre
+    brewCasks.onlyoffice
+    brewCasks.mysqlworkbench
 
     # IDE
     brewCasks.visual-studio-code
