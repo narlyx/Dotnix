@@ -6,6 +6,7 @@
         requests
         tkinter
         typer
+        pip
       ]))
   ];
 }
