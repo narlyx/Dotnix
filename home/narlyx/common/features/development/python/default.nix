@@ -7,6 +7,7 @@
         tkinter
         typer
         pip
+        numpy
       ]))
   ];
 }
