@@ -1,17 +1,15 @@
-{
-  pkgs,
-  ...
-}: {
+{...}: {
   boot.loader = {
     timeout = 5;
-  efi = {
+    efi = {
       efiSysMountPoint = "/boot";
-  };
+    };
     grub = {
       enable = true;
-    efiSupport = true;
+      efiSupport = true;
       efiInstallAsRemovable = true;
-      devices = [ "nodev" ];
+      devices = ["nodev"];
+      useOSProber = true;
     };
   };
 }
