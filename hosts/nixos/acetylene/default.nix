@@ -10,7 +10,7 @@
     ../common/features/flatpak.nix
     ../common/features/docker.nix
   ];
-  home-manager.users."narlyx".imports = [../../../home/narlyx/nixos];
+  home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/acetylene.nix];
 
   # Host name
   networking.hostName = "acetylene";
