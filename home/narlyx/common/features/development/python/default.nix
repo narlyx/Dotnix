@@ -8,6 +8,7 @@
         typer
         pip
         numpy
+        matplotlib
       ]))
   ];
 }
