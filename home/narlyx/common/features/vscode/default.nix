@@ -2,7 +2,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    mutableExtensionsDir = false;
+    mutableExtensionsDir = true;
 
     # Global extensions
     extensions = with pkgs.vscode-extensions; [
@@ -15,6 +15,7 @@
       catppuccin.catppuccin-vsc-icons
       # Languages
       bbenoist.nix
+      ms-python.python
     ];
 
     # Global user settings
