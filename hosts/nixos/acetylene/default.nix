@@ -2,13 +2,10 @@
   # Imports section
   imports = [
     ./hardware-configuration.nix
-    ../common/system
-    ../common/users
+    ../common
     ../common/environments/plasma.nix
-    ../common/features/tailscale.nix
     ../common/features/virtualisation.nix
     ../common/features/flatpak.nix
-    ../common/features/docker.nix
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/acetylene.nix];
 

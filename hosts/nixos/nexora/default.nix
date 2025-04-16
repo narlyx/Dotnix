@@ -2,10 +2,8 @@
   # Imports section
   imports = [
     ./hardware-configuration.nix
-    ../common/system
-    ../common/users
+    ../common
     ../common/environments/hyprland.nix
-    ../common/features/tailscale.nix
     ../common/features/printing.nix
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/nexora.nix];

@@ -1,8 +1,7 @@
 {
   # Imports section
   imports = [
-    ../common/system
-    ../common/users
+    ../common
     ../common/features/tailscale.nix
     ../common/features/yabai.nix
   ];

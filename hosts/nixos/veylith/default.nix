@@ -2,9 +2,7 @@
   # Imports section
   imports = [
     ./hardware-configuration.nix
-    ../common/system
-    ../common/users
-    ../common/features/tailscale.nix
+    ../common
     ../common/features/ssh.nix
     ../common/features/docker.nix
   ];

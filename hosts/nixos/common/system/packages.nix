@@ -7,5 +7,6 @@
     exfat
     geteltorito
     unzip
+    htop
   ];
 }
