@@ -5,6 +5,7 @@
     ../../features/wezterm
     ../../features/shell
     ../../features/syncthing
+    ../../features/vscode
   ];
   home.packages = with pkgs; [
     # Media
@@ -29,7 +30,6 @@
     brewCasks.mysqlworkbench
 
     # IDE
-    brewCasks.visual-studio-code
     brewCasks.android-studio
     neovide
 
