@@ -6,7 +6,7 @@
     ../common/apps/wezterm # Another terminal
     ../common/services/syncthing # File sync
     ../common/devel # Development defaults
-    ../common/app/vscode # IDE
+    ../common/apps/vscode # IDE
   ];
 
   # Packages
