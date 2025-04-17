@@ -5,6 +5,7 @@
     ../common
     ../common/features/ssh.nix
     ../common/features/docker.nix
+    ../common/features/mysqlserver.nix
   ];
 
   # Host name
