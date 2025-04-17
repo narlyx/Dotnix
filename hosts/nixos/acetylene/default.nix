@@ -3,11 +3,11 @@
   imports = [
     ./hardware-configuration.nix
     ../common
-    ../common/environments/plasma.nix
+    ../common/environments/tiling.nix
     ../common/features/virtualisation.nix
     ../common/features/flatpak.nix
   ];
-  home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/acetylene.nix];
+  home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/desktop.nix];
 
   # Host name
   networking.hostName = "acetylene";

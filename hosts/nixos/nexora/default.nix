@@ -6,7 +6,7 @@
     ../common/environments/hyprland.nix
     ../common/features/printing.nix
   ];
-  home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/nexora.nix];
+  home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/desktop.nix];
 
   # Host name
   networking.hostName = "nexora";

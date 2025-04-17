@@ -1,5 +1,6 @@
 {
   wayland.windowManager.hyprland.settings = {
+    # General input settings
     input = {
       kb_layout = "us";
       follow_mouse = 1;
@@ -10,6 +11,8 @@
         scroll_factor = 0.25;
       };
     };
+
+    # Custom T480S touchpad
     device = {
       name = "synaptics-tm3293-011";
       accel_profile = "adaptive";
