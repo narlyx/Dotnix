@@ -20,6 +20,12 @@
       "$mod CTRL, Q, exit," # Quit hyprland
       "$mod SHIFT, R, exec, hyprctl reload" # Reload config
 
+      # Screenshot
+      ", PRINT, exec, ~/.config/hypr/screenshot.sh region"
+      "SHIFT, PRINT, exec, ~/.config/hypr/screenshot.sh window"
+      "CTRL, PRINT, exec, ~/.config/hypr/screenshot.sh output"
+      "CTRL SHIFT, PRINT, exec, ~/.config/hypr/screenshot.sh all"
+
       # Navigation
       "$mod, H, movefocus, l" # Move focus left
       "$mod, J, movefocus, d" # Move focus down

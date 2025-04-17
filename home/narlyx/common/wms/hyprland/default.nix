@@ -4,6 +4,10 @@
     playerctl
     brightnessctl
     swww
+    grim
+    slurp
+    swappy
+    jq
   ];
 
   # Enable hyprland
@@ -22,4 +26,7 @@
     # Application launcher
     ../../util/walker
   ];
+
+  # Files
+  home.file.".config/hypr/screenshot.sh".source = ./screenshot.sh;
 }
