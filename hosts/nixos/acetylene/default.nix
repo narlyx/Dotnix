@@ -6,6 +6,7 @@
     ../common/environments/tiling.nix
     ../common/features/virtualisation.nix
     ../common/features/flatpak.nix
+    ../common/environments/plasma.nix
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/desktop.nix];
 
