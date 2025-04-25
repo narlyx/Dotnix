@@ -3,7 +3,7 @@ let
 in {
   wayland.windowManager.hyprland.settings = {
     exec = [
-      "tmux setenv -g HYPRLAND_ISNTANCE_SIGNATURE '$HYPRLAND_INSTANCE_SIGNATURE'"
+      "tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE '$HYPRLAND_INSTANCE_SIGNATURE'"
     ];
     exec-once = [
       "walker --gapplication-service"
@@ -12,4 +12,3 @@ in {
     ];
   };
 }
-
