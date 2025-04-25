@@ -6,25 +6,11 @@
     ../common/environments/tiling.nix
     ../common/features/virtualisation.nix
     ../common/features/flatpak.nix
-    ../common/environments/plasma.nix
   ];
   home-manager.users."narlyx".imports = [../../../home/narlyx/nixos/desktop.nix];
 
   # Host name
   networking.hostName = "acetylene";
-
-  # Special networking
-  networking = {
-    interfaces = {
-      enp5s0.useDHCP = true;
-      br0.useDHCP = true;
-    };
-    bridges = {
-      "br0" = {
-        interfaces = ["enp5s0"];
-      };
-    };
-  };
 
   # Packages
   environment.systemPackages = with pkgs; [
