@@ -3,5 +3,6 @@
     ./go
     ./python
     ./sqlite
+    ./node
   ];
 }
