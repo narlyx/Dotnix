@@ -2,6 +2,7 @@
   # Modules
   imports = [
     ./default.nix # Extend default
+    ../common/devel # Development tools
     ../common/wms/hyprland # Window manager
     ../common/apps/ghostty # Terminal
     ../common/apps/librewolf # Browser
