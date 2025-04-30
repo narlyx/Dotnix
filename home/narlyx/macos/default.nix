@@ -33,6 +33,9 @@
       };
     }))
 
+    # Creative
+    brewCasks.krita
+
     # Devel
     brewCasks.mysqlworkbench
     brewCasks.android-studio
