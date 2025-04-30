@@ -40,6 +40,7 @@
     };
 
     extraConfig = {
+      push.rebase = true;
       credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
     };
   };
