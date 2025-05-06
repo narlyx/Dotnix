@@ -19,6 +19,7 @@
       "libvirtd"
       "networkmanager"
       "docker"
+      "render"
     ];
     shell = pkgs.zsh;
   };

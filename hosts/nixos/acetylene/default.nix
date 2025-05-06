@@ -19,12 +19,19 @@
     pciutils
   ];
 
-  # GPU passthough
+  # GPU drivers
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  # Filesystem permissions
   systemd.tmpfiles.rules = [
     "f /dev/shm/scream 0660 narlyx qemu-libvirtd -"
     "f /dev/shm/looking-glass 0660 narlyx qemu-libvirtd -"
   ];
 
+  # GPU passthough
   boot = {
     kernelParams = ["kvm-amd" "amd_iommu=on"];
     kernelModules = ["vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio"];
