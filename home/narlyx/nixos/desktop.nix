@@ -24,6 +24,12 @@
 
     # Utilities
     qbittorrent
+
+    # Creative
+    krita
+    gimp
+    freecad
+    prusa-slicer
   ];
 
   # Theme
