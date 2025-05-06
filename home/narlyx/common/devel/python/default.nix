@@ -9,6 +9,7 @@
         pip
         numpy
         matplotlib
+        pandas
         tkinter
       ]))
   ];
