@@ -7,5 +7,6 @@
     ./starship
     ./neofetch
     ./git
+    ./neovim
   ];
 }
