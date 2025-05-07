@@ -1,8 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./default.nix
-    ./common/wms/hyprland
-    ./common/apps/librewolf
     ./common/apps/ghostty
     ./common/devel
     ./common/services/syncthing.nix
