@@ -2,7 +2,6 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    enableNushellIntegration = true;
     settings = {
       # New line before each prompt
       add_newline = true;

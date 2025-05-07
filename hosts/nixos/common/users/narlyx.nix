@@ -1,14 +1,5 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
-
+{pkgs, ...}: {
   programs.zsh.enable = true;
-
   users.users.narlyx = {
     isNormalUser = true;
     initialPassword = "changeme";
@@ -22,18 +13,5 @@
       "render"
     ];
     shell = pkgs.zsh;
-  };
-
-  home-manager = {
-    backupFileExtension = "bak";
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    extraSpecialArgs = {inherit inputs;};
-    users."narlyx" = {
-      home.username = "narlyx";
-      home.homeDirectory = "/home/narlyx";
-      programs.home-manager.enable = true;
-      imports = [../../../../home/narlyx/nixos];
-    };
   };
 }

@@ -1,10 +1,8 @@
 {pkgs, ...}: {
-  # Dependencies
   home.packages = with pkgs; [
     gh
   ];
 
-  # Terminal interface
   programs.lazygit = {
     enable = true;
     settings = {
@@ -24,7 +22,6 @@
     };
   };
 
-  # Git command
   programs.git = {
     enable = true;
 

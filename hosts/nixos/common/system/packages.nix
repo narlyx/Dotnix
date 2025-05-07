@@ -5,8 +5,8 @@
     curl
     vim
     exfat
-    geteltorito
     unzip
+    tree
     htop
   ];
 }

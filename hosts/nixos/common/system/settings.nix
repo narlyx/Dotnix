@@ -1,5 +1,5 @@
 {
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowunfree = true;
   system.autoUpgrade = {
     enable = true;
     dates = "weekly";

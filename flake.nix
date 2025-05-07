@@ -1,7 +1,6 @@
 {
-  description = "Configurations for Narlyx";
+  description = "Nix configuration version 2349052";
 
-  # Inputs section
   inputs = {
     # Packages
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -11,84 +10,20 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Darwin (macos)
-    nix-darwin = {
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Aylurs gtk shell
-    ags.url = "github:aylur/ags";
-
-    # Mac app utility
-    mac-app-util.url = "github:hraban/mac-app-util";
-
-    # Homebrew support
-    brew-nix = {
-      url = "github:BatteredBunny/brew-nix";
-      inputs.brew-api.follows = "brew-api";
-    };
-    brew-api = {
-      url = "github:BatteredBunny/brew-api";
-      flake = false;
-    };
-
-    # Nvf (NeoVim)
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-  # End of inputs
 
-  # Outputs section
-  outputs = inputs @ {
+  outputs = {
     self,
     nixpkgs,
-    nix-darwin,
+    home-manager,
     ...
-  }: {
-    # Overlays
+  } @ inputs: let
+    inherit (self) outputs;
+    lib = nixpkgs.lib // home-manager.lib;
+  in {
+    inherit nixpkgs lib;
     overlays = import ./overlays {inherit inputs;};
-
-    # Nixos configurations
-    nixosConfigurations = {
-      "nexora" = nixpkgs.lib.nixosSystem {
-        system = "x86_84-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          (import ./hosts/nixos/nexora)
-        ];
-      };
-      "acetylene" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          (import ./hosts/nixos/acetylene)
-        ];
-      };
-      "veylith" = nixpkgs.lib.nixosSystem {
-        system = "x86_84-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          (import ./hosts/nixos/veylith)
-        ];
-      };
-    };
-    # End of nixos configurations
-
-    # Darwin configurations
-    darwinConfigurations = {
-      "arsenic" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = {inherit inputs;};
-        modules = [
-          (import ./hosts/macos/arsenic)
-        ];
-      };
-    };
-    # End of darwin configurations
+    nixosConfigurations = import ./hosts/nixos {inherit inputs outputs;};
+    homeConfigurations = import ./home {inherit inputs outputs;};
   };
-  # End of outputs
 }
