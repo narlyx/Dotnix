@@ -8,6 +8,7 @@
     ./common/services/syncthing.nix
   ];
   home.packages = with pkgs; [
+    firefox
     spotify
     vesktop
     obsidian
