@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
     ../common/system
     ../common/users
-    ../common/wms/plasma.nix
+    ../common/desktops/plasma.nix
     ../common/services/printing.nix
     ../common/services/tailscale.nix
   ];

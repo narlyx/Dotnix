@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
     ../common/system
     ../common/users
-    ../common/wms/hyprland.nix
+    ../common/desktops/hyprland.nix
     ../common/services/ssh.nix
     ../common/services/tailscale.nix
   ];
