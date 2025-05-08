@@ -5,7 +5,7 @@
       theme = "catppuccin-mocha";
       background-opacity = 0.9;
       background-blur-radius = 20;
-      font-family = "JetBrainsMono Nerd Font";
+      font-family = "Fira Code";
       font-size = 11;
       cursor-style = "bar";
       cursor-opacity = 0.75;
