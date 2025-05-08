@@ -8,7 +8,7 @@
     ../common/services/tailscale.nix
   ];
 
-  environment.etc."modprobe.d/psmouseconf".text = ''
+  environment.etc."modprobe.d/psmouse.conf".text = ''
     options psmouse synaptics_intertouch=1
   '';
 
