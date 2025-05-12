@@ -1,3 +1,3 @@
-{ inputs, ... }: {
-  #rahrah
-}
+{inputs, ... }: [
+  inputs.brew-nix.overlays.default
+]

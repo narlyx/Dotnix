@@ -1,0 +1,24 @@
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    ./default.nix
+    ./common/apps/ghostty
+    ./common/services/syncthing.nix
+    inputs.mac-app-util.homeManagerModules.default
+  ];
+
+  home.packages = with pkgs; [
+    firefox
+    spotify
+    vesktop
+    obsidian
+    brewCasks.onlyoffice
+    raycast
+    qbittorrent
+    brewCasks.krita
+    brewCasks.mysqlworkbench
+  ];
+}
