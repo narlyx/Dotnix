@@ -2,6 +2,7 @@
   imports = [
     ../common/system
     ../common/users
+    ../common/services/tailscale.nix
     inputs.mac-app-util.darwinModules.default
   ];
 
