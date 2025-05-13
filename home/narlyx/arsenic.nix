@@ -6,6 +6,7 @@
   imports = [
     ./default.nix
     ./common/apps/ghostty
+    ./common/devel
     ./common/services/syncthing.nix
     inputs.mac-app-util.homeManagerModules.default
   ];
