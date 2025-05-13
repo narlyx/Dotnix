@@ -44,11 +44,12 @@
       ignoreSpace = true;
       share = true;
       append = true;
-    }; 
-    
+    };
+
     shellAliases = {
       "reload" = "source ~/.zshrc";
       "cls" = "clear";
+      "rd" = "rmdir";
       "l" = "eza --oneline --icons --git";
       "ls" = "eza --oneline --icons --git";
       "la" = "eza --oneline -ah --icons --git";
