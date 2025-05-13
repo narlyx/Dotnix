@@ -17,5 +17,7 @@
     gimp
     freecad
     prusa-slicer
+
+    prismlauncher
   ];
 }

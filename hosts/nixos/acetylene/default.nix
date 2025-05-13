@@ -8,6 +8,8 @@
     ../common/services/tailscale.nix
   ];
 
+  services.flatpak.enable = true;
+
   networking.hostName = "acetylene";
   system.stateVersion = "25.05";
 }
