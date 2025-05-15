@@ -17,6 +17,7 @@
     gimp
     freecad
     prusa-slicer
+    mysql-workbench
 
     prismlauncher
   ];
