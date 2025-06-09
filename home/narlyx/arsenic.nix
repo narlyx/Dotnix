@@ -22,5 +22,6 @@
     qbittorrent
     brewCasks.krita
     brewCasks.mysqlworkbench
+    emacs
   ];
 }
