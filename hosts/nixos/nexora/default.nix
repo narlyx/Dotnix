@@ -3,9 +3,9 @@
     ./hardware-configuration.nix
     ../common/system
     ../common/users
-    ../common/desktops/plasma.nix
     ../common/services/printing.nix
     ../common/services/tailscale.nix
+    ../common/desktops/hyprland.nix
   ];
 
   environment.etc."modprobe.d/psmouse.conf".text = ''

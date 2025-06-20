@@ -4,6 +4,7 @@
     ./common/apps/ghostty
     ./common/devel
     ./common/services/syncthing.nix
+    ./common/wms/hyprland
   ];
   home.packages = with pkgs; [
     firefox
