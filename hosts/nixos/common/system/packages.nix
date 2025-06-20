@@ -8,5 +8,6 @@
     unzip
     tree
     htop
+    imagemagick
   ];
 }
