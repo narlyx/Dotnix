@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  # Dependancies
+  # Dependencies
   home.packages = with pkgs; [
     walker
     playerctl
@@ -23,6 +23,9 @@
     ./config/look.nix
     ./config/monitors.nix
     ./config/rules.nix
+
+    # Other dependencies
+    ./waybar
   ];
 
   # Files

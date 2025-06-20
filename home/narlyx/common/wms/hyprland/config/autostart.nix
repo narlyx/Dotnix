@@ -9,6 +9,7 @@ in {
       "walker --gapplication-service"
       "swww-daemon"
       "swww img ${wallpaper}"
+      "waybar"
     ];
   };
 }
