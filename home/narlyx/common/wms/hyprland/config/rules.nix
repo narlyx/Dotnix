@@ -6,6 +6,16 @@
     ];
     workspace = [
       #"workspaceId, defaultName:newWorkspaceName"
+      "1, defaultName:I"
+      "2, defaultName:II"
+      "3, defaultName:III"
+      "4, defaultName:IV"
+      "5, defaultName:V"
+      "6, defaultName:VI"
+      "7, defaultName:VII"
+      "8, defaultName:VIII"
+      "9, defaultName:IX"
+      "10, defaultName:X"
     ];
   };
 }
