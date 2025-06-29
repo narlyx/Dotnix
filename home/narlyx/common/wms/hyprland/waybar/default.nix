@@ -24,14 +24,14 @@
         # Module customization
         "clock" = {
           interval = 30;
-          format = "{:%a %b %m %I:%M %p}";
+          format = "[ {:%a %b %m %I:%M %p} ]";
           tooltip = false;
         };
         "battery" = {
-          format = "Bat: {capacity}%";
+          format = "[ Bat: {capacity}% ]";
         };
         "wireplumber" = {
-          format = "Vol: {volume}%";
+          format = "[ Vol: {volume}% ]";
           max-volume = 100.0;
           reverse-scrolling = true;
         };
@@ -42,22 +42,32 @@
         border-radius: 0;
         border: none;
         margin: 0;
+        color: #c6d0f5;
       }
       window#waybar {
-        border-radius: 0 0 5px 5px;
+        border-radius: 0 0 10px 10px;
+        background-color: #303446;
       }
       window#waybar>box {
-        padding: 0 10px 0 10px;
+        padding: 0 10px 2px 10px;
+      }
+      .module {
+        padding: 0 10px;
+        background-color: #414559;
+      }
+      #workspaces {
+        padding: 0 4px;
+        border-radius: 0 0 10px 10px;
       }
       #clock {
-        border-radius: 0 0 5px 0;
+        border-radius: 0 0 10px 0;
       }
       #battery {
-        border-radius: 0 0 0 5px;
+        border-radius: 0 0 0 10px;
       }
       #tray {
-        margin-right: 5px;
-        border-radius: 0 0 5px 5px;
+        margin-right: 10px;
+        border-radius: 0 0 10px 10px;
       }
     '';
   };
