@@ -26,6 +26,7 @@
 
     # Other dependencies
     ./waybar
+    ./mako
   ];
 
   # Files
