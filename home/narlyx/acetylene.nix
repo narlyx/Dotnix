@@ -18,6 +18,9 @@
     freecad
     prusa-slicer
     mysql-workbench
+    strawberry
+    davinci-resolve
+    vlc
 
     prismlauncher
   ];
