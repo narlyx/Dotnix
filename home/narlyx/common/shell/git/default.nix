@@ -26,7 +26,7 @@
     enable = true;
 
     userName = "Narlyx";
-    userEmail = "109835029+narlyx@users.noreply.github.com";
+    userEmail = "shout@narlyx.dev";
 
     delta = {
       enable = true;
