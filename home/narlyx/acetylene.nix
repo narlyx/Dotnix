@@ -23,5 +23,6 @@
     vlc
 
     prismlauncher
+    rpcs3
   ];
 }
