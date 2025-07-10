@@ -5,7 +5,7 @@
 }: {
   imports = [
     ./default.nix
-    ./common/wms/aerospace
+    ./common/desktops/aerospace
     ./common/apps/ghostty
     ./common/devel
     ./common/services/syncthing.nix

@@ -38,11 +38,11 @@
     x11.enable = true;
     hyprcursor = {
       enable = true;
-      size = 16;
+      size = 12;
     };
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 16;
+    size = 24;
   };
   gtk = {
     enable = true;

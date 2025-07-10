@@ -16,8 +16,8 @@
         ];
         modules-right = [
           "tray"
-          "battery"
           "wireplumber"
+          "battery"
           "clock"
         ];
 
@@ -62,7 +62,7 @@
       #clock {
         border-radius: 0 0 10px 0;
       }
-      #battery {
+      #wireplumber {
         border-radius: 0 0 0 10px;
       }
       #tray {

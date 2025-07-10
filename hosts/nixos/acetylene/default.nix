@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
     ../common/system
     ../common/users
-    ../common/desktops/plasma.nix
+    ../common/desktops/hyprland.nix
     ../common/services/ssh.nix
     ../common/features/gpg.nix
     ../common/services/tailscale.nix
