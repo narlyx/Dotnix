@@ -11,6 +11,7 @@
       "networkmanager"
       "docker"
       "render"
+      "input"
     ];
     shell = pkgs.zsh;
   };
