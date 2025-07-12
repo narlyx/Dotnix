@@ -9,7 +9,7 @@ in {
     # Autostart
     exec --no-startup-id dev --autostart --environment i3
     exec --no-startup-id ${pkgs.picom}/bin/picom --config ~/.config/picom/picom.conf -b
-    exec --no-startup-id ${pkgs.feh}/bin/feh --bg-fill ${wallpaper}
+    exec_always --no-startup-id sh -c '${pkgs.autorandr}/bin/autorandr -c && ${pkgs.feh}/bin/feh --bg-fill ${wallpaper}';
 
     # Variables
     set $mod Mod4
