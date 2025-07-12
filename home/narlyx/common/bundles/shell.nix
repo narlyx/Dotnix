@@ -6,5 +6,6 @@
     #../features/thefuck removed from nixpkgs
     ../features/tmux
     ../features/neofetch
+    ../features/git
   ];
 }
