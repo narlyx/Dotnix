@@ -1,11 +1,11 @@
 {pkgs, ...}: {
-  programs.zsh.enable = true;
+  programs.bash.enable = true;
   users.users.techmin = {
-    isNormalUser = true;
+    isNormaluser = true;
     initialPassword = "changeme";
+    shell = pkgs.bash;
     extraGroups = [
       "wheel"
     ];
-    shell = pkgs.zsh;
   };
 }

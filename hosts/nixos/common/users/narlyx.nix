@@ -3,16 +3,16 @@
   users.users.narlyx = {
     isNormalUser = true;
     initialPassword = "changeme";
+    shell = pkgs.zsh;
     extraGroups = [
       "wheel"
       "audio"
       "video"
-      "libvirtd"
-      "networkmanager"
-      "docker"
-      "render"
       "input"
+      "render"
+      "networkmanager"
+      "libvirtd"
+      "docker"
     ];
-    shell = pkgs.zsh;
   };
 }

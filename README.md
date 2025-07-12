@@ -1,2 +1,1 @@
-# Coming soon
-im way too lazy for this frfr
+Super awesome config yah

@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./go
-    ./python
-    ./node
-  ];
-}

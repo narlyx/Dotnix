@@ -1,17 +1,18 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ../common/system
-    ../common/users
-    ../common/desktops/hyprland.nix
-    ../common/services/ssh.nix
+    ../common/base
+    ../common/features/bluetooth.nix
     ../common/features/gpg.nix
-    ../common/services/tailscale.nix
-    ../common/services/printing.nix
+    ../common/features/printing.nix
+    ../common/features/ssh.nix
+    ../common/features/tablet.nix
+    ../common/features/tailscale.nix
     ../common/features/virtualisation.nix
+    ../common/features/flatpak.nix
+    ../common/environments/xorg.nix
+    ../common/users/narlyx.nix
   ];
-
-  services.flatpak.enable = true;
 
   hardware.graphics = {
     enable = true;
@@ -27,7 +28,7 @@
     ];
   };
 
-  services.xserver.videoDrivers = ["amdgpu"];
+  #services.xserver.videoDrivers = ["amdgpu"];
 
   environment.variables = {
     RUSTICL_ENABLE = "radeonsi";
@@ -53,5 +54,4 @@
   };
 
   networking.hostName = "acetylene";
-  system.stateVersion = "25.05";
 }

@@ -1,29 +1,18 @@
-{pkgs, ...}: {
+{
   imports = [
     ./hardware-configuration.nix
-    ../common/system
-    ../common/users/techmin.nix
-    ../common/services/ssh.nix
-    ../common/services/tailscale.nix
+    ../common/base
+    ../common/features/bluetooth.nix
+    ../common/features/printing.nix
+    ../common/features/tailscale.nix
+    ../common/users/narlyx.nix
+    ../common/environments/xorg.nix
   ];
 
-  # Mysql server
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-    configFile = pkgs.writeText "my.cnf" ''
-      [mysqld]
-      datadir = /var/lib/mysql
-      bind-address = 0.0.0.0
-      port = 3306
-    '';
-  };
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 3306 ];
-    allowedUDPPorts = [ 3306 ];
-  };
+  # Touchpad fix
+  environment.etc."modprobe.d/psmouse.conf".text = ''
+    options psmouse synaptics_intertouch=1
+  '';
 
   networking.hostName = "dravikra";
-  system.stateVersion = "25.05";
 }

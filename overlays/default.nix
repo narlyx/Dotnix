@@ -1,3 +1,2 @@
-{inputs, ... }: [
-  inputs.brew-nix.overlays.default
-]
+# Placeholder
+{inputs, ...}: []
