@@ -75,7 +75,7 @@ in {
    bindsym $mod+quotes split v
 
    ## Layouts
-   bindsym $mod+f fullsceen toggle
+   bindsym $mod+f fullscreen toggle 
    bindsym $mod+s layout stacking
    bindsym $mod+w layout tabbed
    bindsym $mod+e layout toggle split
