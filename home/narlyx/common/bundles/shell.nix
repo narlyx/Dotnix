@@ -7,5 +7,6 @@
     ../features/tmux
     ../features/neofetch
     ../features/git
+    ../features/vim
   ];
 }
