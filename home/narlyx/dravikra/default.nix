@@ -14,5 +14,6 @@
     firefox
     spotify
     vesktop
+    strawberry
   ];
 }
