@@ -5,6 +5,11 @@ in {
   imports = [
     ./dunst
   ];
+  home.packages = with pkgs; [
+    playerctl
+    brightnessctl
+    xsel
+  ];
   home.file.".config/i3/config".text = ''
     # Autostart
     exec --no-startup-id dev --autostart --environment i3
@@ -105,6 +110,19 @@ in {
    bindsym $mod+Shift+8 move container to workspace number $ws8
    bindsym $mod+Shift+9 move container to workspace number $ws9
    bindsym $mod+Shift+10 move container to workspace number $ws10
+
+
+   ## Media keys
+   bindsym XF86AudioMute exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+   bindsym XF86AudioMicMute exec "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+   bindsym XF86AudioRaiseVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+   bindsym XF86AudioLowerVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+   bindsym XF86AudioNext exec "playerctl next"
+   bindsym XF86AudioPause exec "playerctl play-pause"
+   bindsym XF86AudioPlay exec "playerctl play-pause"
+   bindsym XF86AudioPrev exec "playerctl previous"
+   bindsym XF86MonBrightnessUp exec "brightnessctl s 10%+"
+   bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-"
 
    ## Reload i3
    bindsym $mod+Shift+c reload
