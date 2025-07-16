@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   # Dependancies
+  imports = [ ../features/pipewire.nix ];
   programs.dconf.enable = true;
   # Greeter
   services.greetd = {
