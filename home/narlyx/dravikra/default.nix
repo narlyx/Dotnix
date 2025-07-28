@@ -14,6 +14,9 @@
     firefox
     spotify
     vesktop
+    obsidian
+
     strawberry
+    rockbox-utility
   ];
 }
