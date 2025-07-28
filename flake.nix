@@ -9,6 +9,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Copyparty
+    copyparty.url = "github:9001/copyparty";
   };
   outputs = {
     self,
