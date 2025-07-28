@@ -1,5 +1,4 @@
 {
-  nixpkgs.config.allowunfree = true;
   system = {
     stateVersion = "25.05";
     autoUpgrade = {
