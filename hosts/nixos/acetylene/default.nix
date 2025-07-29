@@ -28,8 +28,6 @@
     ];
   };
 
-  #services.xserver.videoDrivers = ["amdgpu"];
-
   environment.variables = {
     RUSTICL_ENABLE = "radeonsi";
     ROC_ENABLE_PRE_VEGA = "1";
