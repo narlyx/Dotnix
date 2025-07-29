@@ -14,6 +14,8 @@
     htop
     tmux
     libnotify
+    progress
+    file
   ];
   fonts.packages = with pkgs; [
     fira-code

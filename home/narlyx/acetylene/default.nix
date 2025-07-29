@@ -57,5 +57,8 @@
 
     prismlauncher
     rpcs3
+
+    spotdl
+    rockbox-utility
   ];
 }
