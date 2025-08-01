@@ -47,7 +47,7 @@
      };
 
      shellAliases = {
-       "reload" = "source ~/.zshrc";
+       "reload-shell" = "source ~/.zshrc";
        "reload-system" = "sudo nixos-rebuild switch --flake ~/Dotnix";
        "reload-home" = "home-manager switch --flake ~/Dotnix -b bak";
        "cls" = "clear";
