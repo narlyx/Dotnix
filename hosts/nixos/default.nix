@@ -22,4 +22,9 @@ in {
     specialArgs = {inherit inputs outputs;};
     modules = [(import ./acetylene)];
   };
+  astrylx = outputs.lib.nixosSystem {
+    pkgs = mkPkgs "x86_64-linux";
+    specialArgs = {inherit inputs outputs;};
+    modules = [(import ./astrylx)];
+  };
 }
