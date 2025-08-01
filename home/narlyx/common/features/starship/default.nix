@@ -9,8 +9,8 @@
 
       # Custom format
       format = lib.concatStrings [
-        "[╭─](bold white)$os$hostname$directory$git_status\n"
-        "[╰─](bold white)$shell$character"
+        "[╭─](bold white)$os $hostname $directory $git_status\n"
+        "[╰─](bold white)$shell $character"
       ];
 
       # Prompt character
@@ -21,8 +21,8 @@
 
       # Directory
       directory = {
-        format = "[$path]($style) [$read_only]($read_only_style)";
-        read_only = " ";
+        format = "[$path]($style)[$read_only]($read_only_style)";
+        read_only = "  ";
         style = "bold blue";
         read_only_style = "bold red";
       };
@@ -30,7 +30,7 @@
       # Shell labels
       shell = {
         disabled = false;
-        style = "italic white";
+        format = "[$indicator](italic white)";
         zsh_indicator = "zsh";
         nu_indicator = "nu";
         unknown_indicator = "???";
@@ -40,30 +40,31 @@
       username = {
         disabled = false;
         show_always = true;
-        format = "[$user](bold italic green) ";
+        format = "[$user](bold italic green)";
       };
 
       # Host name
       hostname = {
         disabled = false;
         ssh_only = false;
-        format = "[@$hostname](bold italic green) ";
+        format = "[@$hostname](bold italic bright-green)[$ssh_symbol](italic red)";
+        ssh_symbol = " 󰢹 ";
       };
 
       # Operating system icons
       os = {
         disabled = false;
-        format = "[$symbol](bold white) ";
+        format = "[$symbol](bold white)";
         symbols = {
-          NixOS = "";
-          Macos = "";
-          Unknown = "";
+          NixOS = " ";
+          Macos = " ";
+          Unknown = " ";
         };
       };
 
       # Git status
       git_status = {
-        format = "([ \\[$all_status$ahead_behind\\]]($style) )";
+        format = "([ \\[$all_status$ahead_behind\\]]($style))";
         style = "bold cyan";
       };
     };
