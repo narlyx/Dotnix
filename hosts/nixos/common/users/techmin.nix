@@ -1,7 +1,6 @@
 {pkgs, ...}: {
-  programs.bash.enable = true;
   users.users.techmin = {
-    isNormaluser = true;
+    isNormalUser = true;
     initialPassword = "changeme";
     shell = pkgs.bash;
     extraGroups = [
