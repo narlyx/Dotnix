@@ -39,6 +39,7 @@
   };
   
   home.packages = with pkgs; [
+    brave
     firefox
     spotify
     vesktop
@@ -58,6 +59,7 @@
     prismlauncher
     rpcs3
 
+    yt-dlp
     spotdl
     rockbox-utility
   ];
