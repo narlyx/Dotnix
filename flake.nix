@@ -12,6 +12,9 @@
 
     # Copyparty
     copyparty.url = "github:9001/copyparty";
+
+    # Minecraft
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
   outputs = {
     self,
