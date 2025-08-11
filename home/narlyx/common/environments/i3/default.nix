@@ -8,6 +8,7 @@ in {
   home.packages = with pkgs; [
     playerctl
     brightnessctl
+    flameshot
     xsel
   ];
   home.file.".config/i3/config".text = ''
@@ -123,6 +124,9 @@ in {
    bindsym XF86AudioPrev exec "playerctl previous"
    bindsym XF86MonBrightnessUp exec "brightnessctl s 10%+"
    bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-"
+
+   # Screenshot
+   bindsym Print exec "flameshot gui"
 
    ## Reload i3
    bindsym $mod+Shift+c reload
