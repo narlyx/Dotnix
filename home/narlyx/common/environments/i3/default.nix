@@ -77,8 +77,8 @@ in {
    bindsym $mod+Ctrl+l resize grow width 10px or 10 ppt
 
    ## Window split direction
-   bindsym $mod+Shift+percent split h
-   bindsym $mod+quotes split v
+   bindsym $mod+Shift+bar split h
+   bindsym $mod+Shift+backslash split v
 
    ## Layouts
    bindsym $mod+f fullscreen toggle 
@@ -98,7 +98,7 @@ in {
    bindsym $mod+7 workspace number $ws7
    bindsym $mod+8 workspace number $ws8
    bindsym $mod+9 workspace number $ws9
-   bindsym $mod+10 workspace number $ws10
+   bindsym $mod+0 workspace number $ws10
 
    ## Move window to workspace
    bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -110,8 +110,7 @@ in {
    bindsym $mod+Shift+7 move container to workspace number $ws7
    bindsym $mod+Shift+8 move container to workspace number $ws8
    bindsym $mod+Shift+9 move container to workspace number $ws9
-   bindsym $mod+Shift+10 move container to workspace number $ws10
-
+   bindsym $mod+Shift+0 move container to workspace number $ws10
 
    ## Media keys
    bindsym XF86AudioMute exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
