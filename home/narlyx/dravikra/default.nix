@@ -3,6 +3,7 @@
     ../common/base
     ../common/bundles/shell.nix
     ../common/bundles/code.nix
+    ../common/bundles/creative-3d.nix
     ../common/environments/i3
 
     ../common/features/wezterm

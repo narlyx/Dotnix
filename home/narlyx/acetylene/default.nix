@@ -3,6 +3,8 @@
     ../common/base
     ../common/bundles/shell.nix
     ../common/bundles/code.nix
+    ../common/bundles/creative-2d.nix
+    ../common/bundles/creative-3d.nix
     ../common/environments/i3
     ../common/features/wezterm
     ../common/features/syncthing
@@ -47,10 +49,6 @@
     onlyoffice-desktopeditors
     zoom-us
     qbittorrent
-    krita
-    gimp
-    freecad
-    prusa-slicer
     mysql-workbench
     strawberry
     davinci-resolve
