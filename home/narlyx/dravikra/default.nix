@@ -12,12 +12,16 @@
   ];
 
   home.packages = with pkgs; [
+    brave
     firefox
     spotify
     vesktop
     obsidian
 
     strawberry
+    spotdl
+    yt-dlp
+    ffmpeg
     rockbox-utility
   ];
 }
