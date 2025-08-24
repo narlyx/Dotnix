@@ -35,6 +35,25 @@
 
       # Loading Zim modules
       source ''${ZIM_HOME}/init.zsh 
+
+      # Rebuild command
+      rebuild() {
+        case "$(uname)" in
+          Linux)
+            if grep -qi nixos /etc/os-release; then
+              sudo nixos-rebuild switch --flake ~/Dotnix "$@"
+            else
+              echo "Nix NixOS stupi"
+            fi
+            ;;
+          Darwin)
+            sudo darwin-rebuild switch --flake ~/Dotnix "$@"
+            ;;
+          *)
+            echo "Unsuported OS"
+            ;;
+        esac
+      }
     '';
 
      history  = {
@@ -48,7 +67,7 @@
 
      shellAliases = {
        "reload-shell" = "source ~/.zshrc";
-       "reload-system" = "sudo nixos-rebuild switch --flake ~/Dotnix";
+       "reload-system" = "rebuild";
        "reload-home" = "home-manager switch --flake ~/Dotnix -b bak";
        "cls" = "clear";
        "rd" = "rmdir";
