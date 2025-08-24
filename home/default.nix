@@ -19,4 +19,9 @@ in {
     pkgs = mkPkgs "x86_64-linux";
     extraSpecialArgs = {inherit inputs outputs;};
   };
+  "narlyx@arsenic" = outputs.lib.homeManagerConfiguration {
+    modules = [./narlyx/arsenic];
+    pkgs = mkPkgs "aarch64-darwin";
+    extraSpecialArgs = {inherit inputs outputs;};
+  };
 }
