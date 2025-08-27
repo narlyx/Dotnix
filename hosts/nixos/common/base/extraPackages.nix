@@ -16,6 +16,7 @@
     libnotify
     progress
     file
+    cifs-utils
   ];
   fonts.packages = with pkgs; [
     fira-code
