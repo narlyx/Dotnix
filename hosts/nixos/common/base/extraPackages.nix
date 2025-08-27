@@ -17,6 +17,7 @@
     progress
     file
     cifs-utils
+    lftp
   ];
   fonts.packages = with pkgs; [
     fira-code

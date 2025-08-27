@@ -5,6 +5,7 @@
     ../common/bundles/code.nix
     ../common/bundles/creative-2d.nix
     ../common/bundles/creative-3d.nix
+    ../common/bundles/cyber.nix
     ../common/environments/i3
     ../common/features/wezterm
     ../common/features/syncthing
