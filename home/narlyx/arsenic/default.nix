@@ -5,6 +5,7 @@
     ../common/bundles/code.nix
 
     ../common/features/ghostty
+    ../common/features/wezterm
     ../common/features/syncthing
   ];
 
@@ -15,5 +16,8 @@
     vesktop
     obsidian
     brewCasks.onlyoffice
+    brewCasks.android-studio
+    ffmpeg
+    raycast
   ];
 }
