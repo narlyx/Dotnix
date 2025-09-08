@@ -5,7 +5,6 @@
     ../common/features/bluetooth.nix
     ../common/features/gpg.nix
     ../common/features/printing.nix
-    ../common/features/ssh.nix
     ../common/features/tablet.nix
     ../common/features/tailscale.nix
     ../common/features/virtualisation.nix

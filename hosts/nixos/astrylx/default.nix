@@ -2,7 +2,6 @@
   imports = [
     ./hardware-configuration.nix
     ../common/base
-    ../common/features/ssh.nix
     ../common/features/tailscale.nix
     ../common/users/techmin.nix
     ../common/users/www-data.nix

@@ -6,5 +6,7 @@
     ./locale.nix
     ./networking.nix
     ./settings.nix
+    ../users/root.nix
+    ../features/ssh.nix
   ];
 }

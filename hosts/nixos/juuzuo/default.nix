@@ -2,11 +2,21 @@
   imports = [
     ./hardware-configuration.nix
     ./networking.nix # generated at runtime by nixos-infect
+
+    # Manually importing everything because of a BIOS system
+    ../common/base/extraPackages.nix
+    ../common/base/input.nix
+    ../common/base/locale.nix
+    ../common/base/locale.nix
+    ../common/base/networking.nix
+    ../common/base/settings.nix
+    ../common/users/root.nix
+
+    # Features
     ../common/features/tailscale.nix
   ];
 
-  environment.systemPackages = with pkgs; [ vim git ];
-
+  # Port forwarding
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
   networking = {
     nat = {
@@ -59,11 +69,5 @@
     };
   };
 
-  boot.tmp.cleanOnBoot = true;
-  zramSwap.enable = true;
   networking.hostName = "juuzuo";
-  networking.domain = "";
-  services.openssh.enable = true;
-  users.users.root.openssh.authorizedKeys.keys = [''ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMXDO/fJLr/4xeoZyTzbDSOLkP3LOEvu/gSRmNRJg9wD'' ];
-  system.stateVersion = "25.05";
 }
