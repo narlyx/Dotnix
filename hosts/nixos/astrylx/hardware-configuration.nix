@@ -8,36 +8,43 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci_renesas" "xhci_pci" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d9f65e27-7427-4c5d-b0d0-22eae8eda7bb";
+    { device = "/dev/disk/by-uuid/83066a5d-7b5f-404b-ac9c-c94c08def383";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/d9f65e27-7427-4c5d-b0d0-22eae8eda7bb";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" ];
-    };
-
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/d9f65e27-7427-4c5d-b0d0-22eae8eda7bb";
+    { device = "/dev/disk/by-uuid/83066a5d-7b5f-404b-ac9c-c94c08def383";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
 
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/83066a5d-7b5f-404b-ac9c-c94c08def383";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" ];
+    };
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C7A6-8DA0";
+    { device = "/dev/disk/by-uuid/6EA1-FDE6";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices = [ ];
+
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
