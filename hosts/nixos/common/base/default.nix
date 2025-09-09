@@ -8,5 +8,6 @@
     ./settings.nix
     ../users/root.nix
     ../features/ssh.nix
+    ../../../../secrets
   ];
 }

@@ -18,6 +18,7 @@
     file
     cifs-utils
     lftp
+    sops
   ];
   fonts.packages = with pkgs; [
     fira-code
