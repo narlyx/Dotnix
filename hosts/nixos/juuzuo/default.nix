@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let
+  domain = "narlyx.net";
+  tailnet = "narlyx.tailnet";
+in {
   imports = [
     ./hardware-configuration.nix
     ./networking.nix # generated at runtime by nixos-infect
@@ -15,6 +18,36 @@
     # Features
     ../common/features/tailscale.nix
   ];
+
+  # VPN
+  services.headscale = {
+    enable = true;
+    address = "0.0.0.0";
+    port = 8080;
+    settings = {
+      server_url = "https://headscale.${domain}";
+      dns = {
+        base_domain = tailnet;
+        magic_dns = true;
+        nameservers.global = [
+          "1.1.1.1"
+          "1.0.0.1"
+        ];
+      };
+    };
+  };
+
+  # Proxy
+  services.caddy = {
+    enable = true;
+    virtualHosts = {
+      "https://headscale.${domain}" = {
+        extraConfig = ''
+          reverse_proxy * http://localhost:8080
+        '';
+      };
+    };
+  };
 
   # Port forwarding
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
@@ -62,12 +95,14 @@
         }
       '';
     };
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [ 22 25565 19132 ];
-      allowedUDPPorts = [ 22 25565 19132 24454 ];
-    };
   };
+
+  # Firewall
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 443 80 22 25565 19132 ];
+    allowedUDPPorts = [ 22 25565 19132 24454 ];
+   };
 
   networking.hostName = "juuzuo";
 }
