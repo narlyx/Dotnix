@@ -14,5 +14,8 @@
     options psmouse synaptics_intertouch=1
   '';
 
+  # Steam
+  programs.steam.enable = true;
+
   networking.hostName = "dravikra";
 }
