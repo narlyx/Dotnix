@@ -25,4 +25,9 @@
       enable = true;
     };
   };
+  # Applications
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+    helvum
+  ];
 }
