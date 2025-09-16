@@ -10,9 +10,10 @@
   ];
 
   # Touchpad fix
-  environment.etc."modprobe.d/psmouse.conf".text = ''
-    options psmouse synaptics_intertouch=1
-  '';
+  boot.kernelParams = [ "psmouse.synaptics_intertouch=1" ];
+  #environment.etc."modprobe.d/psmouse.conf".text = ''
+  #  options psmouse synaptics_intertouch=1
+  #'';
 
   # Steam
   programs.steam.enable = true;
