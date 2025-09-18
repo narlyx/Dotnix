@@ -12,6 +12,7 @@
       };
     };
 in {
+  # Desktops/laptops
   dravikra = outputs.lib.nixosSystem {
     pkgs = mkPkgs "x86_64-linux";
     specialArgs = {inherit inputs outputs;};
@@ -22,14 +23,21 @@ in {
     specialArgs = {inherit inputs outputs;};
     modules = [(import ./acetylene)];
   };
+
+  # Servers
+  juuzuo = outputs.lib.nixosSystem {
+    pkgs = mkPkgs "x86_64-linux";
+    specialArgs = {inherit inputs outputs;};
+    modules = [(import ./juuzuo)];
+  };
   astrylx = outputs.lib.nixosSystem {
     pkgs = mkPkgs "x86_64-linux";
     specialArgs = {inherit inputs outputs;};
     modules = [(import ./astrylx)];
   };
-  juuzuo = outputs.lib.nixosSystem {
+  sylvester = outputs.lib.nixosSystem {
     pkgs = mkPkgs "x86_64-linux";
     specialArgs = {inherit inputs outputs;};
-    modules = [(import ./juuzuo)];
+    modules = [(import ./sylvester)];
   };
 }
