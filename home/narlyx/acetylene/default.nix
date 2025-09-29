@@ -72,5 +72,7 @@
     yt-dlp
     spotdl
     rockbox-utility
+
+    gmetronome
   ];
 }
