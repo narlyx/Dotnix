@@ -24,4 +24,9 @@ in {
     pkgs = mkPkgs "aarch64-darwin";
     extraSpecialArgs = {inherit inputs outputs;};
   };
+  "narlyx@dracula" = outputs.lib.homeManagerConfiguration {
+    modules = [./narlyx/dracula];
+    pkgs = mkPkgs "aarch64-linux";
+    extraSpecialArgs = {inherit inputs outputs;};
+  };
 }

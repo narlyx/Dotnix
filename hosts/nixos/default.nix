@@ -23,6 +23,11 @@ in {
     specialArgs = {inherit inputs outputs;};
     modules = [(import ./acetylene)];
   };
+  dracula = outputs.lib.nixosSystem {
+    pkgs = mkPkgs "aarch64-linux";
+    specialArgs = {inherit inputs outputs;};
+    modules = [(import ./dracula)];
+  };
 
   # Servers
   juuzuo = outputs.lib.nixosSystem {
