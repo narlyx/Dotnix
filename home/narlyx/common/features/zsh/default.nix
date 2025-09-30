@@ -10,7 +10,7 @@
     zmodule zsh-users/zsh-autosuggestions
     zmodule zsh-users/zsh-completions
     zmodule MichaelAquilina/zsh-auto-notify
-    zmodule MichealAquilina/zsh-you-should-use
+    zmodule MichaelAquilina/zsh-you-should-use
     zmodule ohmyzsh/ohmyzsh --root plugins/git
   '';
 
@@ -25,7 +25,7 @@
       # Downloading Zim if not present
       if [[ ! -e ''${ZIM_HOME}/zimfw.zsh ]]; then
         curl -fsSL --create-dirs -o ''${ZIM_HOME}/zimfw.zsh \
-          https://github.com/zimfw/zimfw/release/latest/download/zimfw.zsh
+          https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
       fi
 
       # Zim auto updates
