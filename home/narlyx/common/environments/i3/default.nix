@@ -15,7 +15,8 @@ in {
     # Autostart
     exec --no-startup-id dev --autostart --environment i3
     exec --no-startup-id ${pkgs.picom}/bin/picom --config ~/.config/picom/picom.conf -b
-    exec_always --no-startup-id sh -c '${pkgs.autorandr}/bin/autorandr -c && ${pkgs.feh}/bin/feh --bg-fill ${wallpaper}';
+    exec_always --no-startup-id ${pkgs.autorandr}/bin/autorandr -c
+    exec_always --no-startup-id ${pkgs.feh}/bin/feh --bg-fill ${wallpaper};
 
     # Variables
     set $mod Mod4
@@ -126,6 +127,7 @@ in {
  
     # Screenshot
     bindsym Print exec "flameshot gui"
+    bindsym $mod+Shift+s exec "flameshot gui"
  
     ## Reload i3
     bindsym $mod+Shift+c reload
