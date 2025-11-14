@@ -1,16 +1,19 @@
 {pkgs, ...}: {
   imports = [
-    ../common/base
-    ../common/bundles/shell.nix
-    ../common/bundles/code.nix
-    ../common/bundles/creative-2d.nix
-    ../common/bundles/creative-3d.nix
-    ../common/bundles/cyber.nix
-    ../common/environments/i3
-    ../common/features/wezterm
-    ../common/features/syncthing
+    ../common/shared/base
+    ../common/shared/apps/ghostty
+    ../common/shared/apps/zsh
+    ../common/shared/apps/zoxide
+    ../common/shared/apps/starship
+    ../common/shared/apps/tmux
+    ../common/shared/apps/vim
+    ../common/shared/apps/vscode
+    ../common/shared/apps/git
+    ../common/shared/lang/python
+    ../common/shared/lang/node
+    ../common/shared/apps/syncthing
+    ../common/nixos/environments/i3
   ];
-
   programs.autorandr = {
     enable = true;
     profiles = {
@@ -54,25 +57,19 @@
   
   home.packages = with pkgs; [
     brave
-    firefox
     spotify
     vesktop
-    obsidian
     onlyoffice-desktopeditors
-    zoom-us
+    android-studio
     qbittorrent
-    mysql-workbench
     strawberry
-    davinci-resolve
-    vlc
-
-    prismlauncher
-    rpcs3
-
-    yt-dlp
-    spotdl
     rockbox-utility
-
+    prismlauncher
+    spotdl
+    davinci-resolve
+    ardour
     gmetronome
+    vlc
+    yt-dlp
   ];
 }

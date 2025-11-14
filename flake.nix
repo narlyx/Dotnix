@@ -1,45 +1,33 @@
 {
-  description = "Nix configuration 2000 :confounded:";
+  description = "Newer new nix configuration";
   inputs = {
-    # Package repository
+    # Nix Packages
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    # Home management
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Darwin
+    # Darwin for MacOS
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    # Sops
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
-    # Homebrew
-    brew-api = {
-      url = "github:BatteredBunny/brew-api";
-      flake = false;
-    };
+    # Packages for darwin via homebrew
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
       inputs.brew-api.follows = "brew-api";
     };
+    brew-api = {
+      url = "github:BatteredBunny/brew-api";
+      flake = false;
+    };
 
-    # Mac-app-util
+    # Autoindexing apps for darwin
     mac-app-util.url = "github:hraban/mac-app-util";
 
-    # Copyparty
-    copyparty.url = "github:9001/copyparty";
-
-    # Minecraft
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    # User configuration
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -53,8 +41,8 @@
   in {
     inherit nixpkgs lib;
     overlays = import ./overlays {inherit inputs;};
-    nixosConfigurations = import ./hosts/nixos {inherit inputs outputs;};
-    darwinConfigurations = import ./hosts/darwin {inherit inputs outputs;};
+    nixosConfigurations = import ./hosts {inherit inputs outputs;};
+    darwinConfigurations = import ./hosts {inherit inputs outputs;};
     homeConfigurations = import ./home {inherit inputs outputs;};
   };
 }
