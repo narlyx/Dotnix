@@ -11,6 +11,20 @@
     ../common/shared/packages.nix
   ];
 
+  # NAS
+  fileSystems."/mnt/data" = {
+    device = "192.168.0.159:/data";
+    fsType = "nfs";
+    neededForBoot = false;
+    options = [
+      "rw"
+      "nfsvers=4"
+      "_netdev"
+      "nofail"
+      "x-systemd.automount"
+    ];
+  };
+
   # Hostname
   networking.hostName = "astrylx";
 }
