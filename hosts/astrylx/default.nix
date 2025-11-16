@@ -21,7 +21,6 @@
       "nfsvers=4"
       "_netdev"
       "nofail"
-      "x-systemd.automount"
     ];
   };
 
