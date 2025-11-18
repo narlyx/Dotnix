@@ -13,7 +13,6 @@
     ../common/shared/apps/vscode
     ../common/shared/lang/python
     ../common/shared/lang/node
-    ../common/shared/apps/syncthing
   ];
   home.packages = with pkgs; [
     brave
@@ -25,6 +24,7 @@
     brewCasks.android-studio
     brewCasks.roblox
     brewCasks.robloxstudio
+    brewCasks.nextcloud
     rojo
     brewCasks.prusaslicer
     (brewCasks.keyboardcleantool.overrideAttrs (oldAttrs: {
