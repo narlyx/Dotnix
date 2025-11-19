@@ -11,7 +11,6 @@
     ../common/shared/apps/git
     ../common/shared/lang/python
     ../common/shared/lang/node
-    ../common/shared/apps/syncthing
     ../common/nixos/environments/i3
   ];
   programs.autorandr = {
@@ -71,5 +70,6 @@
     gmetronome
     vlc
     yt-dlp
+    nextcloud-client
   ];
 }
