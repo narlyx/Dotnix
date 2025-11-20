@@ -42,8 +42,17 @@ in {
   services.caddy = {
     enable = true;
     virtualHosts = {
+      "https://${domain}" = {
+        extraConfig = "reverse_proxy * http://krylith.${tailnet}:8080";
+      };
       "https://nextcloud.${domain}" = {
         extraConfig = "reverse_proxy * http://krylith.${tailnet}:80";
+      };
+      "https://vault.${domain}" = {
+        extraConfig = "reverse_proxy * http://krylith.${tailnet}:8222";
+      };
+      "https://n8n.${domain}" = {
+        extraConfig = "reverse_proxy * http://krylith.${tailnet}:5678";
       };
       "https://headscale.${domain}" = {
         extraConfig = "reverse_proxy * http://localhost:8080";
