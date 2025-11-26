@@ -12,6 +12,7 @@
     ../common/nixos/services/gpg.nix
     ../common/nixos/services/ssh.nix
     ../common/nixos/services/tailscale.nix
+    ../common/nixos/services/printing.nix
     ../common/nixos/services/flatpak.nix
     ../common/nixos/users/narlyx.nix
     ../common/nixos/apps/virtualisation.nix
