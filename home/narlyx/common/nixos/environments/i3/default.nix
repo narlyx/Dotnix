@@ -111,6 +111,10 @@ in {
     bindsym $mod+Shift+8 move container to workspace number $ws8
     bindsym $mod+Shift+9 move container to workspace number $ws9
     bindsym $mod+Shift+0 move container to workspace number $ws10
+
+    # Move workspaces between monitors
+    bindsym $mod+Shift+greater move workspace to output right
+    bindsym $mod+Shift+less move workspace to output left
  
     ## Media keys
     bindsym XF86AudioMute exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
