@@ -12,6 +12,7 @@
     ../common/shared/lang/python
     ../common/shared/lang/node
     ../common/nixos/environments/i3
+    ../common/shared/apps/librewolf
   ];
   programs.autorandr = {
     enable = true;
