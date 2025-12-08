@@ -6,5 +6,7 @@
     htop
     progress
     file
+    zip
+    unzip
   ];
 }
