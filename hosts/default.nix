@@ -31,6 +31,11 @@ in {
     specialArgs = { inherit inputs outputs; };
     modules = [(import ./acetylene)];
   };
+  dravikra = outputs.lib.nixosSystem {
+    pkgs = mkPkgs "x86_64-linux";
+    specialArgs = { inherit inputs outputs; };
+    modules = [(import ./dravikra)];
+  };
   arsenic = outputs.lib.darwinSystem {
     pkgs = mkPkgs "aarch64-darwin";
     specialArgs = { inherit inputs outputs; };
