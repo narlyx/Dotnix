@@ -11,15 +11,23 @@
     ../common/shared/apps/git
     ../common/shared/lang/python
     ../common/shared/lang/node
-    ../common/nixos/environments/i3
     ../common/shared/apps/librewolf
   ];
   
   home.packages = with pkgs; [
-    spotify
+    # Social media
     vesktop
+
+    # Office
     onlyoffice-desktopeditors
+
+    # Multimedia
+    spotify
     vlc
+    audacity
+    ardour
+
+    # Utilities
     nextcloud-client
   ];
 }

@@ -13,7 +13,7 @@
     ../common/nixos/services/tailscale.nix
     ../common/nixos/services/printing.nix
     ../common/nixos/users/narlyx.nix
-    ../common/nixos/environments/i3.nix
+    ../common/nixos/environments/kde.nix
   ];
 
   # Trackpoint
