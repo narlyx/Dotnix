@@ -95,7 +95,7 @@
       https = true;
       extraAppsEnable = true;
       extraApps = {
-        inherit (pkgs.nextcloud32Packages.apps) cookbook onlyoffice;
+        inherit (pkgs.nextcloud32Packages.apps) cookbook onlyoffice contacts mail;
       };
       home = "/mnt/data/nextcloud";
       configureRedis = true;
