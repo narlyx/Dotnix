@@ -8,5 +8,6 @@
     file
     zip
     unzip
+    cifs-utils
   ];
 }
