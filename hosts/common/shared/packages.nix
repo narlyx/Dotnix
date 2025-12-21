@@ -9,5 +9,6 @@
     zip
     unzip
     cifs-utils
+    ffmpeg
   ];
 }
