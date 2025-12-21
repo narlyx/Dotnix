@@ -1,6 +1,8 @@
 { pkgs, ... }: let
   domain = "narlyx.net";
   tailnet = "narlyx.tailnet";
+  krylith-ip = "100.64.0.12";
+  astrylx-ip = "100.64.0.14";
 in {
   # Modules
   imports = [
@@ -86,11 +88,16 @@ in {
       externalInterface = "eth0";
       internalInterfaces = [ "tailscale0" ];
       forwardPorts = [
-        # {
-        #   destination = "krylith.${tailnet}:25565";
-        #   proto = "tcp";
-        #   sourcePort = 25565;
-        # }
+        {
+          destination = "${astrylx-ip}:25565";
+          proto = "tcp";
+          sourcePort = 25565;
+        }
+        {
+          destination = "${astrylx-ip}:19132";
+          proto = "udp";
+          sourcePort = 19132;
+        }
       ];
     };
     nftables = {
