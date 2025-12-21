@@ -29,5 +29,8 @@
 
     # Utilities
     nextcloud-client
+
+    # Games
+    prismlauncher
   ];
 }

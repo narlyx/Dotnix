@@ -16,6 +16,9 @@
     ../common/nixos/environments/kde.nix
   ];
 
+  # Programs
+  programs.steam.enable = true;
+
   # Trackpoint
   hardware.trackpoint = {
     enable = true;
