@@ -49,8 +49,8 @@
                     DIFFICULTY = "normal";
                     OPS = "B_unno";
                     ENFORCE_WHITELIST = "true";
-                    WHITELIST = "B_unno, 00000000-0000-0000-0009-01ffddc2c1b5, 00000000-0000-0000-0009-01fe2c5384da";
-                };
+                    WHITELIST = "B_unno, 00000000-0000-0000-0009-01ffddc2c1b5, 00000000-0000-0000-0009-01fe2c5384da, 00000000-0000-0000-0009-01f896c95dcd";
+				};
             };
 
         };
