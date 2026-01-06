@@ -91,12 +91,12 @@ in {
 			internalInterfaces = [ "tailscale0" ];
 			forwardPorts = [
 				{
-					destination = "${astrylx-ip}:25565";
+					destination = "${krylith-ip}:25565";
 					proto = "tcp";
 					sourcePort = 25565;
 				}
 				{
-					destination = "${astrylx-ip}:19132";
+					destination = "${krylith-ip}:19132";
 					proto = "udp";
 					sourcePort = 19132;
 				}
