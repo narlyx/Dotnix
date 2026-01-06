@@ -3,7 +3,7 @@
     domain = "narlyx.net";
     tailnet = "narlyx.tailnet";
     krylith-ip = "100.64.0.12";
-    astrylx-ip = "100.64.0.14";
+    astrylx-ip = "100.64.0.7";
 
 in {
     # Modules
