@@ -3,7 +3,7 @@
     imports = [
         ./hardware-configuration.nix
         ../shared
-    ]
+    ];
 
     # Nas
     fileSystems."/mnt/data" = {
