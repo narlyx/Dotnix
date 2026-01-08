@@ -7,5 +7,6 @@
 		audacity
 		inkscape
 		blender
+		davinci-resolve
 	];
 }
