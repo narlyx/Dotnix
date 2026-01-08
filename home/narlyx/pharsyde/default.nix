@@ -1,6 +1,7 @@
 { pkgs, ... }: {
 	imports = [
 		../shared
+		../shared/environments/gnome
 		../shared/bundles/desktop.nix
 		../shared/bundles/development.nix
 		../shared/bundles/creative.nix

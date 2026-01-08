@@ -45,8 +45,13 @@
 
 	];
 
-	# Default packages
+	# Packages
 	environment.systemPackages = with pkgs; [
+
+		gnomeExtensions.blur-my-shell
+		gnomeExtensions.appindicator
+		gnomeExtensions.panel-corners
+		gnomeExtensions.caffeine
 
 		librewolf
 		ghostty
