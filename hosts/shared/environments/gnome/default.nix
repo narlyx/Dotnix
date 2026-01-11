@@ -45,6 +45,9 @@
 
 	];
 
+	# Services
+	services.flatpak.enable = true;
+
 	# Packages
 	environment.systemPackages = with pkgs; [
 
@@ -53,9 +56,6 @@
 		gnomeExtensions.panel-corners
 		gnomeExtensions.caffeine
 
-		librewolf
-		ghostty
-		onlyoffice-desktopeditors
 		nextcloud-client
 
 	];

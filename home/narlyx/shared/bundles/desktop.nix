@@ -8,5 +8,6 @@
 	home.packages = with pkgs; [
 		cider-2
 		onlyoffice-desktopeditors
+		thunderbird
 	];
 }
