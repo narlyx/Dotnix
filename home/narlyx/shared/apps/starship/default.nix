@@ -2,6 +2,7 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+	enableBashIntegration = true;
 
     settings = {
       # New line before each prompt
@@ -10,7 +11,7 @@
       # Custom format
       format = lib.concatStrings [
         "[╭─](bold white)$os $hostname $directory $git_status\n"
-        "[╰─](bold white)$shell $character"
+        "[╰─](bold white)$shell$nix_shell $character"
       ];
 
       # Prompt character
@@ -33,8 +34,15 @@
         format = "[$indicator](italic white)";
         zsh_indicator = "zsh";
         nu_indicator = "nu";
+		bash_indicator = "bash";
         unknown_indicator = "???";
       };
+
+	  # Nix
+	  nix_shell = {
+	  	disabled = false;
+		format = "[ via ](italic white)[NIX-SHELL](bold red)";
+	  };
 
       # User name
       username = {
@@ -47,8 +55,8 @@
       hostname = {
         disabled = false;
         ssh_only = false;
-        format = "[@$hostname](bold italic bright-green)[$ssh_symbol](italic red)";
-        ssh_symbol = " 󰢹 ";
+        format = "[@$hostname](bold italic bright-green)$ssh_symbol";
+        ssh_symbol = "[ via ](bold italic bright-green)[SSH](bold red)";
       };
 
       # Operating system icons
