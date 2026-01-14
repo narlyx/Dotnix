@@ -6,7 +6,8 @@
 		../apps/vscode
 	];
 	home.packages = with pkgs; [
-		cider-2
+		#cider-2
+		spotify
 		onlyoffice-desktopeditors
 		thunderbird
 	];
