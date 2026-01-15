@@ -53,6 +53,7 @@
       "reload-shell" = "source ~/.zshrc";
       "reload-system" = "source ~/Configuration/scripts/reload-system.sh";
       "reload-home" = "source ~/Configuration/scripts/reload-home.sh";
+	  "shell" = "nix-shell --command zsh";
       "cls" = "clear";
       "rd" = "rmdir";
       "l" = "eza --oneline --icons --git";
