@@ -131,6 +131,7 @@
 				N8N_PORT = 5678;
 				#N8N_USER_FOLDER = "/mnt/data/appdata/n8n"; read-only value?!
 				N8N_SECURE_COOKIE = "false";
+				N8N_EDITOR_BASE_URL = "https://n8n.narlyx.net";
 			};
 		};
 
