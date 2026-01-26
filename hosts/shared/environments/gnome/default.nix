@@ -42,6 +42,7 @@
 	imports = [
 
 		../../services/distrobox
+		../../services/printing
 
 	];
 
