@@ -17,6 +17,9 @@
       unbind C-b
       set -g prefix C-Space
       bind C-Space send-prefix
+	  
+	  # Stupid esc
+	  set -s escape-time 0
 
       # Reload config
       bind R source-file ~/.config/tmux/tmux.conf \; display-message -p "\nTMUX environment reloaded.\n\nDone, press ESCAPE to continue."

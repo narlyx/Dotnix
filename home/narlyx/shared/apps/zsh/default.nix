@@ -62,6 +62,7 @@
       "ll" = "eza -lah --icons --git";
       "tree" = "eza --tree --icons --ignore-glob=.git";
       "cat" = "bat";
+	  "emacs" = "emacsclient";
     };
   };
 

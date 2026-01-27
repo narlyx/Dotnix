@@ -6,5 +6,6 @@
 		../apps/zoxide
 		../apps/git
 		../apps/tmux
+		../apps/emacs
 	];
 }

@@ -8,5 +8,6 @@
 		inkscape
 		blender
 		davinci-resolve
+		prusa-slicer
 	];
 }
