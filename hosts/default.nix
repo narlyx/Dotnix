@@ -15,6 +15,12 @@ in {
 		modules = [( import ./pharsyde )];
 	};
 
+	acetylene = outputs.lib.nixosSystem {
+		pkgs = mkPkgs "x86_64-linux";
+		specialArgs = { inherit inputs outputs; };
+		modules = [( import ./acetylene )];
+	};
+
 	# Servers
 
 	juuzuo = outputs.lib.nixosSystem {

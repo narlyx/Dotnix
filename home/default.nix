@@ -15,4 +15,10 @@ in {
 		modules = [ ./narlyx/pharsyde ];
 	};
 
+	"narlyx@acetylene" = outputs.lib.homeManagerConfiguration {
+		pkgs = mkPkgs "x86_64-linux";
+		extraSpecialArgs = { inherit inputs outputs; };
+		modules = [ ./narlyx/acetylene ];
+	};
+
 }
