@@ -9,5 +9,6 @@
 		blender
 		davinci-resolve
 		prusa-slicer
+		ardour
 	];
 }

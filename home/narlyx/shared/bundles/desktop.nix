@@ -10,5 +10,6 @@
 		spotify
 		onlyoffice-desktopeditors
 		thunderbird
+		discord
 	];
 }
