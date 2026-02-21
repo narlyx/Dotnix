@@ -8,6 +8,7 @@
 					appindicator.extensionUuid
 					panel-corners.extensionUuid
 					caffeine.extensionUuid
+					mpris-label.extensionUuid
 				];
 			};
 			"org/gnome/desktop/interface" = {

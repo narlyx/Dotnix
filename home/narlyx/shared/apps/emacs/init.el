@@ -1,5 +1,9 @@
 ;; Packages are managed by nix
 
+;; Remove popups
+(setq inhibit-splash-screen t) ; remove splash screen
+(setq inhibit-startup-message t) ; remove startup screen
+
 ;; General configurations
 (setq make-backup-files nil) ; stop creating backup files
 (setq auto-save-list-file-prefix "~/.emacs.d/autosave/") ; hide autosave files
@@ -15,8 +19,6 @@
 	tab-width 4)
 
 ;; Gui configurations
-(setq inhibit-splash-screen t) ; remove splash screen
-(setq inhibit-startup-message t) ; remove startup screen
 (menu-bar-mode -1) ; hide menubar
 (tool-bar-mode -1) ; hide toolbar
 (scroll-bar-mode -1) ; hide scrollbar

@@ -63,6 +63,9 @@
 		gnomeExtensions.appindicator
 		gnomeExtensions.panel-corners
 		gnomeExtensions.caffeine
+		gnomeExtensions.mpris-label
+
+		gradia
 
 		nextcloud-client
 
