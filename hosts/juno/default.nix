@@ -1,9 +1,10 @@
-{
+{ inputs, ... }: {
     imports = [
         ./hardware-configuration.nix
         ../../modules/users/narlyx
         ../../modules/environments/gnome
         ../../modules/bootloaders/grub
+        inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
     ];
 
     boot.loader.grub.extraEntries = ''
