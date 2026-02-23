@@ -10,11 +10,6 @@ in {
     imports = [
         ./hardware-configuration.nix
         ./networking.nix
-        ../shared/networking
-		../shared/locale
-		../shared/settings
-		../shared/packages
-		../shared/users
     ];
 
     # Bootloader

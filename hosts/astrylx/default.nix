@@ -2,7 +2,7 @@
     # Imports
     imports = [
         ./hardware-configuration.nix
-        ../shared
+        ../../modules/bootloaders/grub
     ];
 
     # Nas

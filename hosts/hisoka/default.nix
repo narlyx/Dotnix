@@ -2,7 +2,7 @@
     # Modules
     imports = [
         ./hardware-configuration.nix
-        ../shared
+        ../../modules/bootloaders/grub
     ];
 
     # Raid array
