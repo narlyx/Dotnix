@@ -5,6 +5,8 @@
         ../../modules/environments/gnome
         ../../modules/bootloaders/grub
         ../../modules/roles/virtualization
+        ../../modules/roles/ai
+        ../../modules/roles/containers
         inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
     ];
 
