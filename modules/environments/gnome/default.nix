@@ -1,10 +1,5 @@
 { pkgs, ... }: {
 
-    # Imports
-    imports = [
-        ../../services/distrobox
-    ];
-
     # Setup Gnome
     services = {
         displayManager.gdm.enable = true;

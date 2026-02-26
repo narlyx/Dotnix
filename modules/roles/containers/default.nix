@@ -1,4 +1,7 @@
 { pkgs, ... }: {
-    imports = [ ../docker ];
+    # Docker
+    virtualisation.docker.enable = true;
+
+    # Distrobox
     environment.systemPackages = [ pkgs.distrobox ];
 }
