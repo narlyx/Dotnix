@@ -29,6 +29,7 @@
         git
         tree
         zip
+        7za
         unzip
     ];
 
