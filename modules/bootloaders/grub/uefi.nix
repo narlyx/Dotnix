@@ -1,4 +1,7 @@
 {
+    boot.kernelParams = [
+        "quiet"
+    ];
     boot.loader = {
         efi = {
             canTouchEfiVariables = false;
@@ -9,5 +12,9 @@
             efiInstallAsRemovable = true;
             device = "nodev";
         };
+    };
+    boot.plymouth = {
+        enable = true;
+        theme = "bgrt";
     };
 }
