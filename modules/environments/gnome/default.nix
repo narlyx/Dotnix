@@ -1,5 +1,9 @@
 { pkgs, ... }: {
 
+    # Portal
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+
     # Setup Gnome
     services = {
         displayManager.gdm.enable = true;

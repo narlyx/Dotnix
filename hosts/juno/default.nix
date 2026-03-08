@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
     imports = [
         ./hardware-configuration.nix
         ../../modules/users/narlyx
@@ -19,5 +19,11 @@
             initrd (loop)/live/initrd.img
         }
     '';
+
+    home-manager.users.narlyx.home.packages = with pkgs; [
+        spotdl
+        strawberry
+        virtualbox
+    ];
 }
 
