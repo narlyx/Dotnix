@@ -16,6 +16,7 @@
             "networkmanager"
             "libvirtd"
             "docker"
+            "vboxusers"
         ];
         openssh.authorizedKeys.keys = [ ''ssh-ed25519 aaaac3nzac1lzdi1nte5aaaaimxdo/fjlr/4xeozytzbdsolkp3loevu/gsrmnrjg9wd'' ];
     };
