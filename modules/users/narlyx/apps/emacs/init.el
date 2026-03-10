@@ -42,7 +42,7 @@
 (good-scroll-mode 1)
 
 ;; Cua bindings
-(cua-mode t)
+(cua-mode -1)
 (setq cua-enable-cursor-indications t)
 (setq cua-auto-tabify-rectablges nil)
 (setq cua-keep-region-after-copy t)
