@@ -5,6 +5,7 @@
         ../../modules/users/narlyx
         ../../modules/environments/gnome
         ../../modules/bootloaders/grub
+        ../../modules/roles/virtualization
     ];
 
     programs.steam.enable = true;
