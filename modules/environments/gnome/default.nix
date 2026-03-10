@@ -1,9 +1,5 @@
 { pkgs, ... }: {
 
-    # Portal
-    xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
-
     # Setup Gnome
     services = {
         displayManager.gdm.enable = true;
@@ -45,6 +41,18 @@
         # gnome-disk-utility
         gnome-connections
     ];
+
+    # XDG
+    xdg.portal = {
+        enable = true;
+        extraPortals = with pkgs; [
+            xdg-desktop-portal-gnome
+            xdg-desktop-portal-gtk
+        ];
+    };
+    environment.extraInit = ''
+        export XDG_DATA_DIRS="$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
+    '';
 
     # Audio services
     services.pipewire = {
