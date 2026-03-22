@@ -8,6 +8,7 @@
         ../../modules/roles/virtualization
     ];
 
+    services.flatpak.enable = true;
     programs.steam.enable = true;
     home-manager.users.narlyx.home.packages = with pkgs; [
         prismlauncher
