@@ -135,6 +135,12 @@
 			};
 		};
 
+        # Cookbook
+        mealie = {
+            enable = true;
+            port = 9000;
+        };
+
     };
 
     # Containers
@@ -155,21 +161,32 @@
                 environment = {
                     # Configuration
                     EULA = "true";
-                    TYPE = "fabric";
-                    MODRINTH_LOADER = "fabric";
+                    TYPE = "paper";
+                    MODRINTH_LOADER = "paper";
                     MODRINTH_ALLOWED_VERSION_TYPE = "beta";
                     VERSION_FROM_MODRINTH_PROJECTS = "true";
-                    MODRINTH_PROJECTS = "fabric-api, geyser, floodgate";
+                    MODRINTH_PROJECTS = "geyser-and-floodgate-auto-uploader";
                     # Properties
                     ENFORCE_SECURE_PROFILE = "false";
                     MOTD = "The freak zone :tongue:";
-                    ICON = "/mnt/appdata/minecraft/server-icon.png";
+                    ICON = "/mnt/data/appdata/minecraft/server-icon.png";
                     MODE = "survival";
                     DIFFICULTY = "normal";
                     OPS = "B_unno";
                     ENFORCE_WHITELIST = "true";
-                    WHITELIST = "B_unno, 00000000-0000-0000-0009-01ffddc2c1b5, 00000000-0000-0000-0009-01fe2c5384da, 00000000-0000-0000-0009-01f896c95dcd";
+                    WHITELIST = "B_unno, 00000000-0000-0000-0009-01ffddc2c1b5, 00000000-0000-0000-0009-01fe2c5384da, 00000000-0000-0000-0009-01f896c95dcd, 00000000-0000-0000-0009-01f5690b09d8";
 				};
+            };
+
+            # Terraria
+            terraria = {
+                image = "passivelemon/terraria-docker:terraria-latest";
+                ports = [
+                    "7777:7777"
+                ];
+                volumes = [
+                    "/mnt/data/appdata/terraria:/opt/terraria/config/"
+                ];
             };
 
         };
